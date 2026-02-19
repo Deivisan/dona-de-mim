@@ -1,0 +1,350 @@
+{
+  "total_renomeados": 43,
+  "erros": [],
+  "renomeacoes": [
+    {
+      "produto_id": 1,
+      "sku": "DDM-0001",
+      "arquivo_original": "1ea8ecea-d3ce-479e-9644-da5bea135fc4.jpeg",
+      "arquivo_novo": "DDM-0001-blusa-plus-size-rosa-delicado-1.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0001-blusa-plus-size-rosa-delicado-1.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 2,
+      "sku": "DDM-0002",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.39 (1).jpeg",
+      "arquivo_novo": "DDM-0002-vestido-plus-size-bege-natural-2.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0002-vestido-plus-size-bege-natural-2.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 3,
+      "sku": "DDM-0003",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.39 (2).jpeg",
+      "arquivo_novo": "DDM-0003-vestido-plus-size-cinza-chique-3.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0003-vestido-plus-size-cinza-chique-3.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 4,
+      "sku": "DDM-0004",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.39.jpeg",
+      "arquivo_novo": "DDM-0004-vestido-plus-size-cinza-chique-4.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0004-vestido-plus-size-cinza-chique-4.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 5,
+      "sku": "DDM-0005",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.40 (1).jpeg",
+      "arquivo_novo": "DDM-0005-vestido-plus-size-rosa-delicado-5.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0005-vestido-plus-size-rosa-delicado-5.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 6,
+      "sku": "DDM-0006",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.40.jpeg",
+      "arquivo_novo": "DDM-0006-vestido-plus-size-preto-cl-ssico-6.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0006-vestido-plus-size-preto-cl-ssico-6.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 7,
+      "sku": "DDM-0007",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.45.jpeg",
+      "arquivo_novo": "DDM-0007-blusa-plus-size-cinza-chique-7.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0007-blusa-plus-size-cinza-chique-7.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 8,
+      "sku": "DDM-0008",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.46 (1).jpeg",
+      "arquivo_novo": "DDM-0008-blusa-plus-size-cinza-chique-8.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0008-blusa-plus-size-cinza-chique-8.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 9,
+      "sku": "DDM-0009",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.46.jpeg",
+      "arquivo_novo": "DDM-0009-blusa-plus-size-cinza-chique-9.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0009-blusa-plus-size-cinza-chique-9.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 10,
+      "sku": "DDM-0010",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.47 (1).jpeg",
+      "arquivo_novo": "DDM-0010-blusa-plus-size-preto-cl-ssico-10.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0010-blusa-plus-size-preto-cl-ssico-10.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 11,
+      "sku": "DDM-0011",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.47 (2).jpeg",
+      "arquivo_novo": "DDM-0011-blusa-plus-size-preto-cl-ssico-11.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0011-blusa-plus-size-preto-cl-ssico-11.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 12,
+      "sku": "DDM-0012",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.47 (3).jpeg",
+      "arquivo_novo": "DDM-0012-blusa-plus-size-preto-cl-ssico-12.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0012-blusa-plus-size-preto-cl-ssico-12.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 13,
+      "sku": "DDM-0013",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.47.jpeg",
+      "arquivo_novo": "DDM-0013-vestido-plus-size-marrom-chocolate-13.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0013-vestido-plus-size-marrom-chocolate-13.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 14,
+      "sku": "DDM-0014",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.48 (1).jpeg",
+      "arquivo_novo": "DDM-0014-vestido-plus-size-cinza-chique-14.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0014-vestido-plus-size-cinza-chique-14.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 15,
+      "sku": "DDM-0015",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.48 (2).jpeg",
+      "arquivo_novo": "DDM-0015-blusa-plus-size-cinza-chique-15.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0015-blusa-plus-size-cinza-chique-15.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 16,
+      "sku": "DDM-0016",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.48.jpeg",
+      "arquivo_novo": "DDM-0016-blusa-plus-size-cinza-chique-16.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0016-blusa-plus-size-cinza-chique-16.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 17,
+      "sku": "DDM-0017",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.49 (1).jpeg",
+      "arquivo_novo": "DDM-0017-blusa-plus-size-marrom-chocolate-17.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0017-blusa-plus-size-marrom-chocolate-17.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 18,
+      "sku": "DDM-0018",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.49 (2).jpeg",
+      "arquivo_novo": "DDM-0018-vestido-plus-size-cinza-chique-18.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0018-vestido-plus-size-cinza-chique-18.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 19,
+      "sku": "DDM-0019",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.49.jpeg",
+      "arquivo_novo": "DDM-0019-vestido-plus-size-cinza-chique-19.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0019-vestido-plus-size-cinza-chique-19.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 20,
+      "sku": "DDM-0020",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.51 (1).jpeg",
+      "arquivo_novo": "DDM-0020-blusa-plus-size-cinza-chique-20.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0020-blusa-plus-size-cinza-chique-20.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 21,
+      "sku": "DDM-0021",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.51.jpeg",
+      "arquivo_novo": "DDM-0021-vestido-plus-size-marrom-chocolate-21.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0021-vestido-plus-size-marrom-chocolate-21.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 22,
+      "sku": "DDM-0022",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.52 (1).jpeg",
+      "arquivo_novo": "DDM-0022-blusa-plus-size-cinza-chique-22.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0022-blusa-plus-size-cinza-chique-22.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 23,
+      "sku": "DDM-0023",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.52 (2).jpeg",
+      "arquivo_novo": "DDM-0023-blusa-plus-size-cinza-chique-23.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0023-blusa-plus-size-cinza-chique-23.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 24,
+      "sku": "DDM-0024",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.52.jpeg",
+      "arquivo_novo": "DDM-0024-blusa-plus-size-cinza-chique-24.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0024-blusa-plus-size-cinza-chique-24.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 25,
+      "sku": "DDM-0025",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.53 (1).jpeg",
+      "arquivo_novo": "DDM-0025-blusa-plus-size-cinza-chique-25.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0025-blusa-plus-size-cinza-chique-25.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 26,
+      "sku": "DDM-0026",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.53 (2).jpeg",
+      "arquivo_novo": "DDM-0026-blusa-plus-size-cinza-chique-26.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0026-blusa-plus-size-cinza-chique-26.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 27,
+      "sku": "DDM-0027",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.53.jpeg",
+      "arquivo_novo": "DDM-0027-blusa-plus-size-preto-cl-ssico-27.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0027-blusa-plus-size-preto-cl-ssico-27.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 28,
+      "sku": "DDM-0028",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.55 (1).jpeg",
+      "arquivo_novo": "DDM-0028-blusa-plus-size-cinza-chique-28.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0028-blusa-plus-size-cinza-chique-28.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 29,
+      "sku": "DDM-0029",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.55.jpeg",
+      "arquivo_novo": "DDM-0029-blusa-plus-size-cinza-chique-29.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0029-blusa-plus-size-cinza-chique-29.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 30,
+      "sku": "DDM-0030",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.56 (1).jpeg",
+      "arquivo_novo": "DDM-0030-blusa-plus-size-cinza-chique-30.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0030-blusa-plus-size-cinza-chique-30.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 31,
+      "sku": "DDM-0031",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.56 (2).jpeg",
+      "arquivo_novo": "DDM-0031-blusa-plus-size-preto-cl-ssico-31.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0031-blusa-plus-size-preto-cl-ssico-31.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 32,
+      "sku": "DDM-0032",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.56.jpeg",
+      "arquivo_novo": "DDM-0032-blusa-plus-size-cinza-chique-32.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0032-blusa-plus-size-cinza-chique-32.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 33,
+      "sku": "DDM-0033",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.57.jpeg",
+      "arquivo_novo": "DDM-0033-vestido-plus-size-preto-cl-ssico-33.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0033-vestido-plus-size-preto-cl-ssico-33.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 34,
+      "sku": "DDM-0034",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.58 (1).jpeg",
+      "arquivo_novo": "DDM-0034-vestido-plus-size-marrom-chocolate-34.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0034-vestido-plus-size-marrom-chocolate-34.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 35,
+      "sku": "DDM-0035",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.58 (2).jpeg",
+      "arquivo_novo": "DDM-0035-blusa-plus-size-cinza-chique-35.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0035-blusa-plus-size-cinza-chique-35.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 36,
+      "sku": "DDM-0036",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.58.jpeg",
+      "arquivo_novo": "DDM-0036-vestido-plus-size-cinza-chique-36.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0036-vestido-plus-size-cinza-chique-36.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 37,
+      "sku": "DDM-0037",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.59 (1).jpeg",
+      "arquivo_novo": "DDM-0037-blusa-plus-size-cinza-chique-37.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0037-blusa-plus-size-cinza-chique-37.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 38,
+      "sku": "DDM-0038",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.18.59.jpeg",
+      "arquivo_novo": "DDM-0038-blusa-plus-size-preto-cl-ssico-38.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0038-blusa-plus-size-preto-cl-ssico-38.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 39,
+      "sku": "DDM-0039",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.19.00.jpeg",
+      "arquivo_novo": "DDM-0039-vestido-plus-size-cinza-chique-39.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0039-vestido-plus-size-cinza-chique-39.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 40,
+      "sku": "DDM-0040",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.19.01 (1).jpeg",
+      "arquivo_novo": "DDM-0040-blusa-plus-size-cinza-chique-40.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0040-blusa-plus-size-cinza-chique-40.jpeg",
+      "categoria": "blusas"
+    },
+    {
+      "produto_id": 41,
+      "sku": "DDM-0041",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.19.01.jpeg",
+      "arquivo_novo": "DDM-0041-vestido-plus-size-marrom-chocolate-41.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0041-vestido-plus-size-marrom-chocolate-41.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 42,
+      "sku": "DDM-0042",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.19.02 (1).jpeg",
+      "arquivo_novo": "DDM-0042-vestido-plus-size-cinza-chique-42.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/vestidos/DDM-0042-vestido-plus-size-cinza-chique-42.jpeg",
+      "categoria": "vestidos"
+    },
+    {
+      "produto_id": 43,
+      "sku": "DDM-0043",
+      "arquivo_original": "WhatsApp Image 2026-02-19 at 13.19.02.jpeg",
+      "arquivo_novo": "DDM-0043-blusa-plus-size-marrom-chocolate-43.jpeg",
+      "caminho_completo": "/home/deivi/Projetos/dona-de-mim/assets/imgs/produtos/blusas/DDM-0043-blusa-plus-size-marrom-chocolate-43.jpeg",
+      "categoria": "blusas"
+    }
+  ]
+}

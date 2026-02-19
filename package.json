@@ -1,0 +1,24 @@
+{
+  "name": "dona-de-mim",
+  "version": "1.0.0",
+  "description": "E-commerce Plus Size Feminino - Moda Para Mulheres Reais",
+  "type": "module",
+  "module": "src/server.ts",
+  "scripts": {
+    "dev": "bun run --hot src/server.ts",
+    "start": "bun run src/server.ts",
+    "build": "bun build src/server.ts --outdir=dist"
+  },
+  "dependencies": {
+    "elysia": "^1.1.0",
+    "@elysiajs/html": "^1.1.0",
+    "@elysiajs/static": "^1.1.0",
+    "@elysiajs/cors": "^1.1.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.3",
+    "@types/bun": "^1.3.9",
+    "typescript": "^5.9.3"
+  },
+  "private": true
+}
