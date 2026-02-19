@@ -3,11 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DONA DE MIM | Moda Feminina</title>
-  <meta name="description" content="DONA DE MIM - Loja de roupas femininas. Moda elegante e acessível para você">
+  <title>Dona De Mim | Plus Size - Moda Para Mulheres Reais</title>
+  <meta name="description" content="Dona De Mim - Moda plus size Do 46 ao 54. Realçando as curvas de quem é dona de si. Loja de roupas femininas para mulheres reais.">
+  <meta name="keywords" content="moda plus size, roupas femininas, loja de roupas, 46 ao 54, mulheres reais, moda plus size Brasil">
+  <meta property="og:title" content="Dona De Mim | Plus Size - Moda Para Mulheres Reais">
+  <meta property="og:description" content="Realçando as curvas de quem é Dona de si. Do 46 ao 54.">
+  <meta property="og:image" content="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.47 (1).jpeg">
+  <meta property="og:url" content="https://dona-de-mim.com.br">
+  <meta property="og:type" content="website">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
   <style>
     :root {
       --primary: #1a1a1a;
@@ -31,6 +42,34 @@
       color: var(--primary);
       background: var(--light);
       line-height: 1.6;
+    }
+
+    /* Floating WhatsApp Button */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+    }
+
+    .floating-whatsapp i {
+      color: white;
+      font-size: 28px;
     }
 
     /* Header */
@@ -138,6 +177,8 @@
     .hero-content {
       position: relative;
       z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
     }
 
     .hero-subtitle {
@@ -150,9 +191,9 @@
 
     .hero h1 {
       font-family: var(--font-display);
-      font-size: 4.5rem;
+      font-size: 4rem;
       font-weight: 400;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       line-height: 1.1;
     }
 
@@ -161,11 +202,30 @@
       font-style: italic;
     }
 
+    .hero-tagline {
+      font-size: 1.3rem;
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
     .hero p {
       font-size: 1.1rem;
       color: var(--gray);
       max-width: 500px;
       margin: 0 auto 40px;
+    }
+
+    .hero-sizes {
+      display: inline-block;
+      background: var(--secondary);
+      color: #fff;
+      padding: 8px 24px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
     }
 
     .btn {
@@ -197,6 +257,35 @@
     .btn-outline:hover {
       background: var(--primary);
       color: #fff;
+    }
+
+    /* About Section */
+    .about {
+      background: #fff;
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .about h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    .about h2 span {
+      color: var(--secondary);
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      line-height: 1.8;
     }
 
     /* Categories */
@@ -262,7 +351,7 @@
       text-transform: uppercase;
     }
 
-    /* Products */
+    /* Products Grid - Using local images */
     .products {
       background: #fff;
       padding: 100px 0;
@@ -293,6 +382,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .product-image:hover img {
+      transform: scale(1.05);
     }
 
     .product-tag {
@@ -355,6 +449,52 @@
       font-size: 0.85rem;
     }
 
+    /* Instagram Section */
+    .instagram-section {
+      background: #fff;
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .instagram-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 40px;
+      transition: color 0.3s;
+    }
+
+    .instagram-link:hover {
+      color: var(--secondary);
+    }
+
+    .instagram-link i {
+      font-size: 1.5rem;
+    }
+
+    .insta-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .insta-grid img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      transition: opacity 0.3s;
+    }
+
+    .insta-grid img:hover {
+      opacity: 0.8;
+    }
+
     /* Footer */
     footer {
       background: var(--primary);
@@ -381,6 +521,29 @@
       color: rgba(255,255,255,0.6);
       font-size: 0.9rem;
       line-height: 1.8;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .footer-social a:hover {
+      background: var(--secondary);
     }
 
     .footer-column h5 {
@@ -410,6 +573,10 @@
       color: var(--secondary);
     }
 
+    .whatsapp-link {
+      color: #25D366;
+    }
+
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.1);
       padding-top: 30px;
@@ -429,6 +596,9 @@
       .footer-content {
         grid-template-columns: repeat(2, 1fr);
       }
+      .insta-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     @media (max-width: 768px) {
@@ -447,13 +617,22 @@
       .features, .footer-content {
         grid-template-columns: 1fr;
       }
+      .insta-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/557591561769" target="_blank" class="floating-whatsapp" aria-label="Fale conosco no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
   <header>
     <div class="header-top">
-      Frete grátis para pedidos acima de R$ 299 | Prime &bull;芭</div>
+      Moda Plus Size &bull; Do 46 ao 54 &bull; ❤️ Mulheres Reais
+    </div>
     <div class="header-main">
       <a href="/" class="logo">DONA DE <span>MIM</span></a>
       <nav>
@@ -462,31 +641,45 @@
           <li><a href="#colecoes">Coleções</a></li>
           <li><a href="#vestidos">Vestidos</a></li>
           <li><a href="#blusas">Blusas</a></li>
-          <li><a href="#acessorios">Acessórios</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
       <div class="header-actions">
-        <button>🔍</button>
-        <button>♡</button>
-        <button>🛒</button>
+        <button aria-label="Buscar"><i class="fas fa-search"></i></button>
+        <button aria-label="Favoritos"><i class="far fa-heart"></i></button>
+        <button aria-label="Carrinho"><i class="fas fa-shopping-bag"></i></button>
       </div>
     </div>
   </header>
 
   <section class="hero">
     <div class="hero-content">
-      <p class="hero-subtitle">Nova Coleção 2026</p>
-      <h1>Elegância que <span>conta</span> sua história</h1>
-      <p>Peças exclusivas pensadas para a mulher moderna que valoriza estilo e sofisticação em cada detalhe.</p>
-      <a href="#shop" class="btn">Comprar Agora</a>
+      <p class="hero-subtitle">Moda Plus Size</p>
+      <h1>Realçando As Curvas <span>De Quem É</span> Dona De Si</h1>
+      <p class="hero-tagline">Moda Para Mulheres Reais ❤️</p>
+      <span class="hero-sizes">Do 46 ao 54</span>
+      <br><br>
+      <a href="#colecoes" class="btn">Ver Coleção</a>
     </div>
   </section>
 
-  <section class="categories">
+  <section class="about">
+    <div class="about-content">
+      <h2>Bem-vinda à <span>Dona De Mim</span></h2>
+      <p>
+        Somos uma marca feita para mulheres reais, que celebra a diversidade e a beleza de cada corpo. 
+        Nossa missão é realçar suas curvas com peças exclusivas, modernas e cheias de estilo. 
+        Do 46 ao 54, aqui você encontra moda que te representa. 
+        <strong>A DONA</strong> é quem decide o que usar. ❤️
+      </p>
+    </div>
+  </section>
+
+  <section class="categories" id="colecoes">
     <h2 class="section-title">Nossas Coleções</h2>
     <div class="categories-grid">
       <div class="category-card">
-        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80" alt="Vestidos">
+        <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.47 (1).jpeg" alt="Vestidos">
         <div class="category-overlay">
           <div class="category-info">
             <h3>Vestidos</h3>
@@ -495,7 +688,7 @@
         </div>
       </div>
       <div class="category-card">
-        <img src="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&q=80" alt="Blusas">
+        <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.48.jpeg" alt="Blusas">
         <div class="category-overlay">
           <div class="category-info">
             <h3>Blusas</h3>
@@ -504,10 +697,10 @@
         </div>
       </div>
       <div class="category-card">
-        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80" alt="Acessórios">
+        <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.46.jpeg" alt="Conjuntos">
         <div class="category-overlay">
           <div class="category-info">
-            <h3>Acessórios</h3>
+            <h3>Conjuntos</h3>
             <span>Ver coleção</span>
           </div>
         </div>
@@ -515,45 +708,83 @@
     </div>
   </section>
 
-  <section class="products" id="shop">
-    <h2 class="section-title">Mais Vendidos</h2>
+  <section class="products" id="novidades">
+    <h2 class="section-title">Novidades</h2>
     <div class="products-grid">
       <div class="product-card">
         <div class="product-image">
           <span class="product-tag">Novo</span>
-          <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&q=80" alt="Vestido Midi">
+          <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg" alt="Vestido">
         </div>
         <div class="product-info">
-          <h4>Vestido Midi Floral</h4>
+          <h4>Vestido Elegante</h4>
           <p class="product-price">R$ 289,90</p>
         </div>
       </div>
       <div class="product-card">
         <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&q=80" alt="Blusa Seda">
+          <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.49.jpeg" alt="Blusa">
         </div>
         <div class="product-info">
-          <h4>Blusa de Seda</h4>
-          <p class="product-price">R$ 159,90 <span class="product-original">R$ 199,90</span></p>
+          <h4>Blusa Moderna</h4>
+          <p class="product-price">R$ 159,90</p>
         </div>
       </div>
       <div class="product-card">
         <div class="product-image">
-          <span class="product-tag">-30%</span>
-          <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80" alt="Vestido Longo">
+          <span class="product-tag">Destaque</span>
+          <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.52.jpeg" alt="Conjunto">
         </div>
         <div class="product-info">
-          <h4>Vestido Longo Elegante</h4>
+          <h4>Conjunto Social</h4>
           <p class="product-price">R$ 349,90</p>
         </div>
       </div>
       <div class="product-card">
         <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1604176354204-9268737828e4?w=400&q=80" alt="Conjunto">
+          <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.51.jpeg" alt="Vestido">
         </div>
         <div class="product-info">
-          <h4>Conjunto Sociale</h4>
-          <p class="product-price">R$ 429,90</p>
+          <h4>Vestido Midi</h4>
+          <p class="product-price">R$ 279,90</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.53.jpeg" alt="Blusa">
+        </div>
+        <div class="product-info">
+          <h4>Blusa Seda</h4>
+          <p class="product-price">R$ 189,90</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="product-tag">Novo</span>
+          <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.56.jpeg" alt="Conjunto">
+        </div>
+        <div class="product-info">
+          <h4>Conjunto Casual</h4>
+          <p class="product-price">R$ 299,90</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.55.jpeg" alt="Vestido">
+        </div>
+        <div class="product-info">
+          <h4>Vestido Plus Size</h4>
+          <p class="product-price">R$ 259,90</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="product-tag">Promoção</span>
+          <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.57.jpeg" alt="Blusa">
+        </div>
+        <div class="product-info">
+          <h4>Blusa Floral</h4>
+          <p class="product-price">R$ 129,90 <span class="product-original">R$ 169,90</span></p>
         </div>
       </div>
     </div>
@@ -561,24 +792,39 @@
 
   <section class="features">
     <div class="feature-item">
-      <i>🚚</i>
+      <i class="fas fa-shipping-fast"></i>
       <h4>Frete Grátis</h4>
       <p>Frete grátis para pedidos acima de R$ 299</p>
     </div>
     <div class="feature-item">
-      <i>↩️</i>
-      <h4>Troca Facil</h4>
+      <i class="fas fa-undo"></i>
+      <h4>Troca Fácil</h4>
       <p>Troca em até 30 dias após recebimento</p>
     </div>
     <div class="feature-item">
-      <i>🔒</i>
+      <i class="fas fa-lock"></i>
       <h4>Compra Segura</h4>
       <p>Seus dados protegidos</p>
     </div>
     <div class="feature-item">
-      <i>💬</i>
+      <i class="fab fa-whatsapp"></i>
       <h4>Atendimento</h4>
       <p>Segunda a sábado, das 9h às 19h</p>
+    </div>
+  </section>
+
+  <section class="instagram-section" id="contato">
+    <a href="https://www.instagram.com/use_donademiim/" target="_blank" class="instagram-link">
+      <i class="fab fa-instagram"></i>
+      @use_donademiim
+    </a>
+    <div class="insta-grid">
+      <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.58.jpeg" alt="@use_donademiim">
+      <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.59.jpeg" alt="@use_donademiim">
+      <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.40.jpeg" alt="@use_donademiim">
+      <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.39.jpeg" alt="@use_donademiim">
+      <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.47.jpeg" alt="@use_donademiim">
+      <img src="assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.46 (1).jpeg" alt="@use_donademiim">
     </div>
   </section>
 
@@ -586,7 +832,20 @@
     <div class="footer-content">
       <div class="footer-brand">
         <a href="/" class="logo">DONA DE <span>MIM</span></a>
-        <p>Moda feminina elegante e acessível. Peças exclusivas pensadas para a mulher moderna que valoriza estilo e sofisticação em cada detalhe.</p>
+        <p>
+          Moda plus size feita para mulheres reais. 
+          Realçando as curvas de quem é Dona de si.
+          <br><br>
+          <strong>A DONA</strong> - 75 9156-1769
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/use_donademiim/" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/557591561769" target="_blank" aria-label="WhatsApp" class="whatsapp-link">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
       </div>
       <div class="footer-column">
         <h5>Institucional</h5>
@@ -594,7 +853,6 @@
           <li><a href="#">Sobre Nós</a></li>
           <li><a href="#">Nossas Lojas</a></li>
           <li><a href="#">Trabalhe Conosco</a></li>
-          <li><a href="#">Blog</a></li>
         </ul>
       </div>
       <div class="footer-column">
@@ -609,15 +867,13 @@
       <div class="footer-column">
         <h5>Contato</h5>
         <ul>
-          <li><a href="#">Fale Conosco</a></li>
-          <li><a href="#">WhatsApp</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Facebook</a></li>
+          <li><a href="https://wa.me/557591561769" class="whatsapp-link"><i class="fab fa-whatsapp"></i> 75 9156-1769</a></li>
+          <li><a href="https://www.instagram.com/use_donademiim/" target="_blank"><i class="fab fa-instagram"></i> @use_donademiim</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 DONA DE MIM. Todos os direitos reservados. Feito com ❤️</p>
+      <p>&copy; 2026 DONA DE MIM. Todos os direitos reservados. Feito com ❤️ para mulheres reais.</p>
     </div>
   </footer>
 </body>
