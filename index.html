@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DONA DE MIM | Moda Feminina</title>
+  <meta name="description" content="DONA DE MIM - Loja de roupas femininas. Moda elegante e acessível para você">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a1a1a;
+      --secondary: #c9a87c;
+      --accent: #8b7355;
+      --light: #fafafa;
+      --gray: #6b6b6b;
+      --border: #e5e5e5;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Poppins', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--primary);
+      background: var(--light);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-top {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 8px;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .header-main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .logo span {
+      color: var(--secondary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 20px;
+    }
+
+    .header-actions button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: var(--primary);
+      transition: color 0.3s;
+    }
+
+    .header-actions button:hover {
+      color: var(--secondary);
+    }
+
+    /* Hero */
+    .hero {
+      height: 85vh;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e8e4df 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(201,168,124,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-subtitle {
+      font-size: 0.9rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: 4.5rem;
+      font-weight: 400;
+      margin-bottom: 30px;
+      line-height: 1.1;
+    }
+
+    .hero h1 span {
+      color: var(--secondary);
+      font-style: italic;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      max-width: 500px;
+      margin: 0 auto 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 48px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Categories */
+    .categories {
+      max-width: 1400px;
+      margin: 80px auto;
+      padding: 0 40px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 60px;
+      font-weight: 400;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .category-card {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .category-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
+      display: flex;
+      align-items: flex-end;
+      padding: 30px;
+    }
+
+    .category-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: #fff;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .category-info span {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Products */
+    .products {
+      background: #fff;
+      padding: 100px 0;
+    }
+
+    .products-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .product-card {
+      cursor: pointer;
+    }
+
+    .product-image {
+      aspect-ratio: 3/4;
+      background: #f5f5f5;
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: var(--secondary);
+      color: #fff;
+      padding: 4px 12px;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .product-info h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .product-price {
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    .product-original {
+      color: var(--gray);
+      text-decoration: line-through;
+      font-size: 0.85rem;
+      margin-left: 10px;
+    }
+
+    /* Features */
+    .features {
+      max-width: 1400px;
+      margin: 80px auto;
+      padding: 80px 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+
+    .feature-item i {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    .feature-item h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .feature-item p {
+      color: var(--gray);
+      font-size: 0.85rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: #fff;
+      padding: 80px 40px 40px;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand .logo {
+      color: #fff;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .footer-brand p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .footer-column h5 {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column li {
+      margin-bottom: 12px;
+    }
+
+    .footer-column a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .footer-column a:hover {
+      color: var(--secondary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 30px;
+      text-align: center;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.8rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .categories-grid, .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-main {
+        padding: 15px 20px;
+      }
+      nav {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .categories-grid, .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .features, .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      Frete grátis para pedidos acima de R$ 299 | Prime &bull;芭</div>
+    <div class="header-main">
+      <a href="/" class="logo">DONA DE <span>MIM</span></a>
+      <nav>
+        <ul>
+          <li><a href="#novidades">Novidades</a></li>
+          <li><a href="#colecoes">Coleções</a></li>
+          <li><a href="#vestidos">Vestidos</a></li>
+          <li><a href="#blusas">Blusas</a></li>
+          <li><a href="#acessorios">Acessórios</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button>🔍</button>
+        <button>♡</button>
+        <button>🛒</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-subtitle">Nova Coleção 2026</p>
+      <h1>Elegância que <span>conta</span> sua história</h1>
+      <p>Peças exclusivas pensadas para a mulher moderna que valoriza estilo e sofisticação em cada detalhe.</p>
+      <a href="#shop" class="btn">Comprar Agora</a>
+    </div>
+  </section>
+
+  <section class="categories">
+    <h2 class="section-title">Nossas Coleções</h2>
+    <div class="categories-grid">
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80" alt="Vestidos">
+        <div class="category-overlay">
+          <div class="category-info">
+            <h3>Vestidos</h3>
+            <span>Ver coleção</span>
+          </div>
+        </div>
+      </div>
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=600&q=80" alt="Blusas">
+        <div class="category-overlay">
+          <div class="category-info">
+            <h3>Blusas</h3>
+            <span>Ver coleção</span>
+          </div>
+        </div>
+      </div>
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80" alt="Acessórios">
+        <div class="category-overlay">
+          <div class="category-info">
+            <h3>Acessórios</h3>
+            <span>Ver coleção</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="shop">
+    <h2 class="section-title">Mais Vendidos</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-image">
+          <span class="product-tag">Novo</span>
+          <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&q=80" alt="Vestido Midi">
+        </div>
+        <div class="product-info">
+          <h4>Vestido Midi Floral</h4>
+          <p class="product-price">R$ 289,90</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&q=80" alt="Blusa Seda">
+        </div>
+        <div class="product-info">
+          <h4>Blusa de Seda</h4>
+          <p class="product-price">R$ 159,90 <span class="product-original">R$ 199,90</span></p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="product-tag">-30%</span>
+          <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80" alt="Vestido Longo">
+        </div>
+        <div class="product-info">
+          <h4>Vestido Longo Elegante</h4>
+          <p class="product-price">R$ 349,90</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1604176354204-9268737828e4?w=400&q=80" alt="Conjunto">
+        </div>
+        <div class="product-info">
+          <h4>Conjunto Sociale</h4>
+          <p class="product-price">R$ 429,90</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature-item">
+      <i>🚚</i>
+      <h4>Frete Grátis</h4>
+      <p>Frete grátis para pedidos acima de R$ 299</p>
+    </div>
+    <div class="feature-item">
+      <i>↩️</i>
+      <h4>Troca Facil</h4>
+      <p>Troca em até 30 dias após recebimento</p>
+    </div>
+    <div class="feature-item">
+      <i>🔒</i>
+      <h4>Compra Segura</h4>
+      <p>Seus dados protegidos</p>
+    </div>
+    <div class="feature-item">
+      <i>💬</i>
+      <h4>Atendimento</h4>
+      <p>Segunda a sábado, das 9h às 19h</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="/" class="logo">DONA DE <span>MIM</span></a>
+        <p>Moda feminina elegante e acessível. Peças exclusivas pensadas para a mulher moderna que valoriza estilo e sofisticação em cada detalhe.</p>
+      </div>
+      <div class="footer-column">
+        <h5>Institucional</h5>
+        <ul>
+          <li><a href="#">Sobre Nós</a></li>
+          <li><a href="#">Nossas Lojas</a></li>
+          <li><a href="#">Trabalhe Conosco</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h5>Ajuda</h5>
+        <ul>
+          <li><a href="#">Central de Ajuda</a></li>
+          <li><a href="#">Frete e Entrega</a></li>
+          <li><a href="#">Trocas e Devoluções</a></li>
+          <li><a href="#">Perguntas Frequentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="#">Fale Conosco</a></li>
+          <li><a href="#">WhatsApp</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 DONA DE MIM. Todos os direitos reservados. Feito com ❤️</p>
+    </div>
+  </footer>
+</body>
+</html>
