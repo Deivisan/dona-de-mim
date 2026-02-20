@@ -847,10 +847,11 @@ const generateHeaderWithCSS = (currentPage = '') => `
       <div class="header-actions">
         <a href="${BASE_URL}contato.html" aria-label="Buscar"><i class="fas fa-search"></i></a>
         <a href="${BASE_URL}contato.html" aria-label="Favoritos"><i class="far fa-heart"></i></a>
+        <a href="${BASE_URL}#carrinho" aria-label="Carrinho"><i class="fas fa-shopping-bag"></i></a>
       </div>
     </div>
   </header>
-`
+ `
 
 // Gerar páginas de categorias
 const categorias = [
