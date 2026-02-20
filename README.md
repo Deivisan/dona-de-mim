@@ -66,7 +66,8 @@
 - 🔄 **Descrição IA** - Gerar descrições únicas baseadas na análise visual
 - 🔄 **Banco de Dados Real** - Integrar com banco de dados SQLite ou PostgreSQL
 - 🔄 **Carrinho de Compras** - Stateful cart (atualmente apenas redireciona para WhatsApp)
-- 🔄 **Domínio Próprio** - Configurar donademim.com.br
+- 🔄 **Domínio Próprio** - Configurar (futuro)
+- 🌐 **Deploy Atual** - https://deivisan.github.io/dona-de-mim/
 
 ---
 
