@@ -4,8 +4,56 @@
 // ============================================
 
 import { products } from '../src/data/products.ts'
+import { readdirSync } from 'fs'
 
 const BASE_URL = 'https://deivisan.github.io/dona-de-mim/'
+
+// Mapear SKU -> nome do arquivo real
+function getImageMap() {
+  const map: Record<string, string> = {}
+  
+  // Blusas
+  try {
+    const blusas = readdirSync('./assets/imgs/produtos/blusas/')
+    blusas.forEach(f => {
+      const match = f.match(/^(DDM-\d+)-.*\.jpeg$/)
+      if (match) map[match[1]] = `blusas/${f}`
+    })
+  } catch (e) {}
+  
+  // Vestidos
+  try {
+    const vestidos = readdirSync('./assets/imgs/produtos/vestidos/')
+    vestidos.forEach(f => {
+      const match = f.match(/^(DDM-\d+)-.*\.jpeg$/)
+      if (match) map[match[1]] = `vestidos/${f}`
+    })
+  } catch (e) {}
+  
+  // Conjuntos (se existir)
+  try {
+    const conjuntos = readdirSync('./assets/imgs/produtos/conjuntos/')
+    conjuntos.forEach(f => {
+      const match = f.match(/^(DDM-\d+)-.*\.jpeg$/)
+      if (match) map[match[1]] = `conjuntos/${f}`
+    })
+  } catch (e) {}
+  
+  return map
+}
+
+const imageMap = getImageMap()
+console.log('🗺️ Mapa de imagens:', Object.keys(imageMap).length, 'imagens encontradas')
+
+// Função para obter caminho da imagem
+function getImagePath(product: typeof products[0]): string {
+  const sku = product.sku
+  if (imageMap[sku]) {
+    return `${BASE_URL}assets/imgs/produtos/${imageMap[sku]}`
+  }
+  // Fallback para imagem padrão baseada na categoria
+  return `${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg`
+}
 
 // Função para gerar o CSS base
 const generateCSS = () => `
@@ -38,8 +86,8 @@ nav ul { display: flex; list-style: none; gap: 40px; }
 nav a { text-decoration: none; color: var(--primary); font-size: 0.85rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s; }
 nav a:hover { color: var(--secondary); }
 .header-actions { display: flex; gap: 20px; }
-.header-actions button { background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--primary); transition: color 0.3s; }
-.header-actions button:hover { color: var(--secondary); }
+.header-actions a { background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--primary); text-decoration: none; transition: color 0.3s; }
+.header-actions a:hover { color: var(--secondary); }
 
 /* Hero */
 .hero { height: 60vh; background: linear-gradient(135deg, #f5f5f5 0%, #e8e4df 100%); display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
@@ -149,11 +197,6 @@ footer { background: var(--primary); color: #fff; padding: 60px 40px 30px; }
 .btn-whatsapp { background: #25D366; color: #fff; padding: 16px 32px; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; }
 .btn-whatsapp:hover { background: #20BD5A; transform: translateY(-2px); }
 
-/* Category Filter */
-.category-filter { max-width: 1400px; margin: 40px auto; padding: 0 40px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-.filter-btn { padding: 10px 24px; border: 1px solid var(--border); background: #fff; text-decoration: none; color: var(--primary); font-size: 0.85rem; transition: all 0.3s; }
-.filter-btn:hover, .filter-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
-
 /* Responsive */
 @media (max-width: 1024px) {
   .categories-grid, .products-grid { grid-template-columns: repeat(2, 1fr); }
@@ -174,7 +217,7 @@ footer { background: var(--primary); color: #fff; padding: 60px 40px 30px; }
 `
 
 // Função para gerar o header
-const generateHeader = (currentPage = '') => `
+const generateHeader = () => `
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -281,22 +324,16 @@ const generateFooter = () => `
 `
 
 // Função para gerar card de produto
-const generateProductCard = (product: typeof products[0], baseUrl = BASE_URL) => {
+const generateProductCard = (product: typeof products[0]) => {
   const price = product.preco_promocional || product.preco_venda
   const originalPrice = product.preco_promocional ? product.preco_venda : null
   const tag = product.lancamento ? 'Novo' : (product.destaque ? 'Destaque' : (product.em_promocao ? 'Promoção' : null))
   
-  // Tentar múltiplos padrões de nome de arquivo
-  const patterns = [
-    `assets/imgs/produtos/${product.categoria}/${product.sku}-${product.slug}.jpeg`,
-    `assets/imgs/produtos/${product.categoria}/${product.sku}-${product.imagem_principal.arquivo_original}`,
-    `assets/imgs/colecoes/${product.imagem_principal.arquivo_original}`,
-  ]
-  const imgPath = baseUrl + patterns[0]
-  const fallbackPath = baseUrl + 'assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg'
+  const imgPath = getImagePath(product)
+  const fallbackPath = `${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg`
   
   return `
-    <a href="${baseUrl}produto-${product.slug}.html" class="product-card">
+    <a href="${BASE_URL}produto-${product.slug}.html" class="product-card">
       <div class="product-image">
         ${tag ? `<span class="product-tag">${tag}</span>` : ''}
         <img src="${imgPath}" alt="${product.nome}" onerror="this.src='${fallbackPath}'">
@@ -310,7 +347,7 @@ const generateProductCard = (product: typeof products[0], baseUrl = BASE_URL) =>
 }
 
 // Função para gerar card de categoria
-const generateCategoryCard = (categoria: string, titulo: string, imagem: string, baseUrl = BASE_URL) => {
+const generateCategoryCard = (categoria: string, titulo: string) => {
   const categoryImages: Record<string, string> = {
     'vestidos': 'WhatsApp Image 2026-02-19 at 13.18.47 (1).jpeg',
     'blusas': 'WhatsApp Image 2026-02-19 at 13.18.48.jpeg',
@@ -319,9 +356,9 @@ const generateCategoryCard = (categoria: string, titulo: string, imagem: string,
   }
   
   return `
-    <a href="${baseUrl}${categoria}.html" class="category-link">
+    <a href="${BASE_URL}${categoria}.html" class="category-link">
       <div class="category-card">
-        <img src="${baseUrl}assets/imgs/colecoes/${categoryImages[categoria] || 'WhatsApp Image 2026-02-19 at 13.18.45.jpeg'}" alt="${titulo}">
+        <img src="${BASE_URL}assets/imgs/colecoes/${categoryImages[categoria] || 'WhatsApp Image 2026-02-19 at 13.18.45.jpeg'}" alt="${titulo}">
         <div class="category-overlay">
           <div class="category-info">
             <h3>${titulo}</h3>
@@ -365,9 +402,9 @@ ${generateHeader()}
 <section class="categories" id="colecoes">
   <h2 class="section-title">Nossas Coleções</h2>
   <div class="categories-grid">
-    ${generateCategoryCard('vestidos', 'Vestidos', '')}
-    ${generateCategoryCard('blusas', 'Blusas', '')}
-    ${generateCategoryCard('conjuntos', 'Conjuntos', '')}
+    ${generateCategoryCard('vestidos', 'Vestidos')}
+    ${generateCategoryCard('blusas', 'Blusas')}
+    ${generateCategoryCard('conjuntos', 'Conjuntos')}
   </div>
 </section>
 
@@ -380,6 +417,9 @@ ${generateHeader()}
 
 ${generateFooter()}
 `
+
+await Bun.write('./index.html', indexContent)
+console.log('✅ Gerado: index.html')
 
 // 2. Gerar páginas de categorias
 const categorias = [
@@ -415,8 +455,8 @@ ${generateFooter()}
 
 // 3. Gerar páginas de produtos individuais
 for (const product of products.filter(p => p.ativo)) {
-  // Usar SKU para imagem correta
-  const imgPath = `${BASE_URL}assets/imgs/produtos/${product.categoria}/${product.sku}-${product.slug}.jpeg`
+  const imgPath = getImagePath(product)
+  const fallbackPath = `${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg`
   
   const sizes = product.tamanhos_disponiveis.map(s => 
     `<button class="size-btn" onclick="selectSize(${s})">${s}</button>`
@@ -442,7 +482,7 @@ ${generateHeader()}
 
 <section class="product-detail">
   <div class="product-gallery">
-    <img src="${BASE_URL}${imgPath}" alt="${product.nome}" onerror="this.src='${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg'">
+    <img src="${imgPath}" alt="${product.nome}" onerror="this.src='${fallbackPath}'">
   </div>
   <div class="product-info-detail">
     <h1>${product.nome}</h1>
@@ -491,11 +531,7 @@ function selectSize(size) {
 `
   
   await Bun.write(`./produto-${product.slug}.html`, productContent)
-  console.log(`✅ Gerado: produto-${product.slug}.html`)
 }
 
-// 4. Sobrescrever index.html
-await Bun.write('./index.html', indexContent)
-
-console.log('\\n🎉 Todas as páginas geradas com sucesso!')
-console.log(`📄 Páginas geradas: ${1 + categorias.length + products.filter(p => p.ativo).length}`)
+console.log(`\\n🎉 Todas as páginas geradas com sucesso!`)
+console.log(`📄 Total: ${1 + categorias.length + products.filter(p => p.ativo).length} páginas`)

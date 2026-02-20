@@ -41,8 +41,8 @@ nav ul { display: flex; list-style: none; gap: 40px; }
 nav a { text-decoration: none; color: var(--primary); font-size: 0.85rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s; }
 nav a:hover { color: var(--secondary); }
 .header-actions { display: flex; gap: 20px; }
-.header-actions button { background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--primary); transition: color 0.3s; }
-.header-actions button:hover { color: var(--secondary); }
+.header-actions a { background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--primary); text-decoration: none; transition: color 0.3s; }
+.header-actions a:hover { color: var(--secondary); }
 
 /* Hero */
 .hero { height: 60vh; background: linear-gradient(135deg, #f5f5f5 0%, #e8e4df 100%); display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
@@ -152,11 +152,6 @@ footer { background: var(--primary); color: #fff; padding: 60px 40px 30px; }
 .btn-whatsapp { background: #25D366; color: #fff; padding: 16px 32px; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; }
 .btn-whatsapp:hover { background: #20BD5A; transform: translateY(-2px); }
 
-/* Category Filter */
-.category-filter { max-width: 1400px; margin: 40px auto; padding: 0 40px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-.filter-btn { padding: 10px 24px; border: 1px solid var(--border); background: #fff; text-decoration: none; color: var(--primary); font-size: 0.85rem; transition: all 0.3s; }
-.filter-btn:hover, .filter-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
-
 /* Responsive */
 @media (max-width: 1024px) {
   .categories-grid, .products-grid { grid-template-columns: repeat(2, 1fr); }
@@ -214,7 +209,7 @@ footer { background: var(--primary); color: #fff; padding: 60px 40px 30px; }
 
 <section class="product-detail">
   <div class="product-gallery">
-    <img src="https://deivisan.github.io/dona-de-mim/https://deivisan.github.io/dona-de-mim/assets/imgs/produtos/blusas/DDM-0017-blusa-plus-size-marrom-chocolate-17.jpeg" alt="Blusa Plus Size Marrom Chocolate" onerror="this.src='https://deivisan.github.io/dona-de-mim/assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg'">
+    <img src="https://deivisan.github.io/dona-de-mim/assets/imgs/produtos/blusas/DDM-0017-blusa-plus-size-marrom-chocolate-17.jpeg" alt="Blusa Plus Size Marrom Chocolate" onerror="this.src='https://deivisan.github.io/dona-de-mim/assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg'">
   </div>
   <div class="product-info-detail">
     <h1>Blusa Plus Size Marrom Chocolate</h1>
