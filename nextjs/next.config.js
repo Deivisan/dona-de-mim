@@ -5,7 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/dona-de-mim' : '',
+  basePath: '/dona-de-mim',
 }
 
 module.exports = nextConfig
