@@ -42,70 +42,47 @@ nav a { text-decoration: none; color: var(--primary); font-size: 0.85rem; font-w
 nav a:hover { color: var(--secondary); }
 .header-actions { display: flex; gap: 20px; }
 .header-actions a { background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--primary); text-decoration: none; transition: color 0.3s; }
-.header-actions a:hover { color: var(--secondary); }
+.header-actions a:hover { color: var(--secondary; }
 
-/* Hero */
-.hero { height: 60vh; background: linear-gradient(135deg, #f5f5f5 0%, #e8e4df 100%); display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,168,124,0.15) 0%, transparent 70%); border-radius: 50%; }
-.hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 20px; }
-.hero-subtitle { font-size: 0.9rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gray); margin-bottom: 20px; }
-.hero h1 { font-family: var(--font-display); font-size: 3rem; font-weight: 400; margin-bottom: 20px; line-height: 1.1; }
-.hero h1 span { color: var(--secondary); font-style: italic; }
-.hero-tagline { font-size: 1.3rem; color: var(--primary); font-weight: 500; margin-bottom: 15px; }
-.hero p { font-size: 1.1rem; color: var(--gray); max-width: 500px; margin: 0 auto 40px; }
-.hero-sizes { display: inline-block; background: var(--secondary); color: #fff; padding: 8px 24px; border-radius: 30px; font-size: 0.9rem; font-weight: 500; letter-spacing: 1px; margin-bottom: 30px; }
+/* Page Header */
+.page-header { background: linear-gradient(135deg, #f5f5f5 0%, #e8e4df 100%); padding: 60px 40px; text-align: center; }
+.page-header h1 { font-family: var(--font-display); font-size: 3rem; font-weight: 400; margin-bottom: 10px; }
+.page-header h1 span { color: var(--secondary); }
+.page-header p { color: var(--gray); font-size: 1.1rem; }
+.page-header .breadcrumb { margin-top: 20px; font-size: 0.85rem; }
+.page-header .breadcrumb a { color: var(--gray); text-decoration: none; }
+.page-header .breadcrumb a:hover { color: var(--secondary); }
+.page-header .breadcrumb span { margin: 0 10px; color: var(--gray); }
+
+/* Content Pages */
+.page-content { max-width: 900px; margin: 60px auto; padding: 0 40px; }
+.page-content h2 { font-family: var(--font-display); font-size: 2rem; margin: 40px 0 20px; color: var(--primary); }
+.page-content h3 { font-family: var(--font-display); font-size: 1.5rem; margin: 30px 0 15px; color: var(--primary); }
+.page-content p { color: var(--gray); line-height: 1.8; margin-bottom: 20px; }
+.page-content ul { margin: 20px 0; padding-left: 20px; }
+.page-content li { color: var(--gray); margin-bottom: 10px; }
+.page-content .highlight { background: #f9f9f9; padding: 30px; border-radius: 8px; margin: 30px 0; border-left: 4px solid var(--secondary); }
+.page-content .highlight h3 { margin-top: 0; }
+
+/* Contact Cards */
+.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 40px 0; }
+.contact-card { background: #fff; padding: 30px; border-radius: 8px; text-align: center; border: 1px solid var(--border); }
+.contact-card i { font-size: 2rem; color: var(--secondary); margin-bottom: 15px; }
+.contact-card h4 { font-family: var(--font-display); margin-bottom: 10px; }
+.contact-card a { color: var(--gray); text-decoration: none; }
+.contact-card a:hover { color: var(--secondary); }
 
 /* Buttons */
 .btn { display: inline-block; padding: 16px 48px; background: var(--primary); color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s; border: none; cursor: pointer; }
 .btn:hover { background: var(--secondary); transform: translateY(-2px); }
-.btn-outline { background: transparent; border: 1px solid var(--primary); color: var(--primary); }
-.btn-outline:hover { background: var(--primary); color: #fff; }
-
-/* About */
-.about { background: #fff; padding: 80px 40px; text-align: center; }
-.about-content { max-width: 800px; margin: 0 auto; }
-.about h2 { font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 20px; font-weight: 400; }
-.about h2 span { color: var(--secondary); }
-.about p { font-size: 1.1rem; color: var(--gray); line-height: 1.8; }
-
-/* Categories */
-.categories { max-width: 1400px; margin: 60px auto; padding: 0 40px; }
-.section-title { font-family: var(--font-display); font-size: 2.5rem; text-align: center; margin-bottom: 40px; font-weight: 400; }
-.categories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.category-card { position: relative; aspect-ratio: 3/4; overflow: hidden; cursor: pointer; }
-.category-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-.category-card:hover img { transform: scale(1.05); }
-.category-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%); display: flex; align-items: flex-end; padding: 30px; }
-.category-info h3 { font-family: var(--font-display); font-size: 1.5rem; color: #fff; font-weight: 400; margin-bottom: 8px; }
-.category-info span { color: rgba(255,255,255,0.8); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
-.category-link { text-decoration: none; display: block; }
-
-/* Products */
-.products { background: #fff; padding: 80px 0; }
-.products-grid { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
-.product-card { cursor: pointer; text-decoration: none; display: block; }
-.product-image { aspect-ratio: 3/4; background: #f5f5f5; margin-bottom: 16px; position: relative; overflow: hidden; }
-.product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-.product-card:hover .product-image img { transform: scale(1.05); }
-.product-tag { position: absolute; top: 15px; left: 15px; background: var(--secondary); color: #fff; padding: 4px 12px; font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; }
-.product-info h4 { font-family: var(--font-display); font-size: 1rem; font-weight: 400; margin-bottom: 8px; color: var(--primary); }
-.product-price { color: var(--secondary); font-weight: 500; }
-.product-original { color: var(--gray); text-decoration: line-through; font-size: 0.85rem; margin-left: 10px; }
+.btn-whatsapp { background: #25D366; color: #fff; padding: 16px 32px; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; }
+.btn-whatsapp:hover { background: #20BD5A; transform: translateY(-2px); }
 
 /* Features */
 .features { max-width: 1400px; margin: 60px auto; padding: 60px 40px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
 .feature-item i { font-size: 2rem; color: var(--secondary); margin-bottom: 20px; }
 .feature-item h4 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 10px; font-weight: 500; }
 .feature-item p { color: var(--gray); font-size: 0.85rem; }
-
-/* Instagram */
-.instagram-section { background: #fff; padding: 80px 40px; text-align: center; }
-.instagram-link { display: inline-flex; align-items: center; gap: 10px; color: var(--primary); text-decoration: none; font-size: 1.1rem; font-weight: 500; margin-bottom: 40px; transition: color 0.3s; }
-.instagram-link:hover { color: var(--secondary); }
-.instagram-link i { font-size: 1.5rem; }
-.insta-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; max-width: 1000px; margin: 0 auto; }
-.insta-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; transition: opacity 0.3s; }
-.insta-grid img:hover { opacity: 0.8; }
 
 /* Footer */
 footer { background: var(--primary); color: #fff; padding: 60px 40px 30px; }
@@ -123,15 +100,30 @@ footer { background: var(--primary); color: #fff; padding: 60px 40px 30px; }
 .whatsapp-link { color: #25D366; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.8rem; }
 
-/* Page Header */
-.page-header { background: linear-gradient(135deg, #f5f5f5 0%, #e8e4df 100%); padding: 60px 40px; text-align: center; }
-.page-header h1 { font-family: var(--font-display); font-size: 3rem; font-weight: 400; margin-bottom: 10px; }
-.page-header h1 span { color: var(--secondary); }
-.page-header p { color: var(--gray); font-size: 1.1rem; }
-.page-header .breadcrumb { margin-top: 20px; font-size: 0.85rem; }
-.page-header .breadcrumb a { color: var(--gray); text-decoration: none; }
-.page-header .breadcrumb a:hover { color: var(--secondary); }
-.page-header .breadcrumb span { margin: 0 10px; color: var(--gray); }
+/* Responsive */
+@media (max-width: 1024px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .features { grid-template-columns: repeat(2, 1fr); }
+  .footer-content { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .header-main { padding: 15px 20px; }
+  nav { display: none; }
+  .page-header h1 { font-size: 2rem; }
+  .features, .footer-content { grid-template-columns: 1fr; }
+}
+
+.products { background: #fff; padding: 80px 0; }
+.products-grid { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.product-card { cursor: pointer; text-decoration: none; display: block; }
+.product-image { aspect-ratio: 3/4; background: #f5f5f5; margin-bottom: 16px; position: relative; overflow: hidden; }
+.product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.product-card:hover .product-image img { transform: scale(1.05); }
+.product-tag { position: absolute; top: 15px; left: 15px; background: var(--secondary); color: #fff; padding: 4px 12px; font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; }
+.product-info h4 { font-family: var(--font-display); font-size: 1rem; font-weight: 400; margin-bottom: 8px; color: var(--primary); }
+.product-price { color: var(--secondary); font-weight: 500; }
+.product-original { color: var(--gray); text-decoration: line-through; font-size: 0.85rem; margin-left: 10px; }
 
 /* Product Detail */
 .product-detail { max-width: 1200px; margin: 60px auto; padding: 0 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
@@ -148,31 +140,19 @@ footer { background: var(--primary); color: #fff; padding: 60px 40px 30px; }
 .size-btn { padding: 12px 20px; border: 1px solid var(--border); background: #fff; cursor: pointer; font-size: 0.9rem; transition: all 0.3s; }
 .size-btn:hover { border-color: var(--secondary); }
 .size-btn.selected { background: var(--secondary); color: #fff; border-color: var(--secondary); }
-.product-actions { display: flex; gap: 15px; }
-.btn-whatsapp { background: #25D366; color: #fff; padding: 16px 32px; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; }
-.btn-whatsapp:hover { background: #20BD5A; transform: translateY(-2px); }
 
-/* Responsive */
 @media (max-width: 1024px) {
-  .categories-grid, .products-grid { grid-template-columns: repeat(2, 1fr); }
-  .features { grid-template-columns: repeat(2, 1fr); }
-  .footer-content { grid-template-columns: repeat(2, 1fr); }
-  .insta-grid { grid-template-columns: repeat(3, 1fr); }
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
   .product-detail { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-  .header-main { padding: 15px 20px; }
-  nav { display: none; }
-  .hero h1 { font-size: 2rem; }
-  .categories-grid, .products-grid { grid-template-columns: 1fr; }
-  .features, .footer-content { grid-template-columns: 1fr; }
-  .insta-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
-  <a href="https://wa.me/557591561769" target="_blank" class="floating-whatsapp" aria-label="Fale conosco no WhatsApp">
+  <a href="https://wa.me/557591561769?text=Ol%C3%A1!%20%F0%9F%98%8A%0A%0AEstou%20navegando%20no%20site%20da%20Dona%20de%20Mim%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos!%0A%0APode%20me%20ajudar%3F%20%E2%9D%A4%EF%B8%8F%0A%0AObrigada!%20%E2%9C%A8" target="_blank" class="floating-whatsapp" aria-label="Fale conosco no WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
@@ -186,13 +166,13 @@ footer { background: var(--primary); color: #fff; padding: 60px 40px 30px; }
           <li><a href="https://deivisan.github.io/dona-de-mim/blusas.html">Blusas</a></li>
           <li><a href="https://deivisan.github.io/dona-de-mim/vestidos.html">Vestidos</a></li>
           <li><a href="https://deivisan.github.io/dona-de-mim/conjuntos.html">Conjuntos</a></li>
-          <li><a href="https://deivisan.github.io/dona-de-mim/#contato">Contato</a></li>
+          <li><a href="https://deivisan.github.io/dona-de-mim/sobre-nos.html">Sobre</a></li>
+          <li><a href="https://deivisan.github.io/dona-de-mim/contato.html">Contato</a></li>
         </ul>
       </nav>
       <div class="header-actions">
-        <a href="https://deivisan.github.io/dona-de-mim/#busca" aria-label="Buscar"><i class="fas fa-search"></i></a>
-        <a href="https://deivisan.github.io/dona-de-mim/#favoritos" aria-label="Favoritos"><i class="far fa-heart"></i></a>
-        <a href="https://deivisan.github.io/dona-de-mim/#carrinho" aria-label="Carrinho"><i class="fas fa-shopping-bag"></i></a>
+        <a href="https://deivisan.github.io/dona-de-mim/contato.html" aria-label="Buscar"><i class="fas fa-search"></i></a>
+        <a href="https://deivisan.github.io/dona-de-mim/contato.html" aria-label="Favoritos"><i class="far fa-heart"></i></a>
       </div>
     </div>
   </header>
@@ -228,7 +208,7 @@ footer { background: var(--primary); color: #fff; padding: 60px 40px 30px; }
     </div>
     
     <div class="product-actions">
-      <a href="https://wa.me/557591561769?text=Ol%C3%A1!%20Gostaria%20de%20comprar%3A%0A%0A*Blusa%20Plus%20Size%20Cinza%20Chique%20(DDM-0026)*%0ATamanho%3A%20%0AQuantidade%3A%201%0A%0AValor%3A%20R%24%20179%2C82" class="btn-whatsapp" target="_blank">
+      <a href="https://wa.me/557591561769?text=Ol%C3%A1!%20%F0%9F%98%8A%0A%0AVi%20o%20produto%20*Blusa%20Plus%20Size%20Cinza%20Chique%20(DDM-0026)*%20(DDM-0026)%20no%20site%20e%20amei!%20%E2%9D%A4%EF%B8%8F%0A%0A%F0%9F%92%B0%20Valor%3A%20R%24%20179%2C82%0A%F0%9F%93%8F%20Gostaria%20de%20saber%20a%20disponibilidade%20dos%20tamanhos.%0A%0AAguardo!%20%E2%9C%A8" class="btn-whatsapp" target="_blank">
         <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
       </a>
     </div>
@@ -241,7 +221,7 @@ footer { background: var(--primary); color: #fff; padding: 60px 40px 30px; }
 </section>
 
 <section class="products" style="padding-top: 40px;">
-  <h2 class="section-title">Outros produtos que você pode gostar</h2>
+  <h2 class="section-title" style="font-family: var(--font-display); font-size: 2rem; text-align: center; margin-bottom: 30px;">Outros produtos que você pode gostar</h2>
   <div class="products-grid">
     
     <a href="https://deivisan.github.io/dona-de-mim/produto-blusa-plus-size-rosa-delicado-1.html" class="product-card">
@@ -299,20 +279,6 @@ footer { background: var(--primary); color: #fff; padding: 60px 40px 30px; }
     <div class="feature-item"><i class="fab fa-whatsapp"></i><h4>Atendimento</h4><p>Seg. a sáb., 9h às 19h</p></div>
   </section>
 
-  <section class="instagram-section" id="contato">
-    <a href="https://www.instagram.com/use_donademiim/" target="_blank" class="instagram-link">
-      <i class="fab fa-instagram"></i>@use_donademiim
-    </a>
-    <div class="insta-grid">
-      <img src="https://deivisan.github.io/dona-de-mim/assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.58.jpeg" alt="@use_donademiim">
-      <img src="https://deivisan.github.io/dona-de-mim/assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.59.jpeg" alt="@use_donademiim">
-      <img src="https://deivisan.github.io/dona-de-mim/assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.40.jpeg" alt="@use_donademiim">
-      <img src="https://deivisan.github.io/dona-de-mim/assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.39.jpeg" alt="@use_donademiim">
-      <img src="https://deivisan.github.io/dona-de-mim/assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.47.jpeg" alt="@use_donademiim">
-      <img src="https://deivisan.github.io/dona-de-mim/assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.46 (1).jpeg" alt="@use_donademiim">
-    </div>
-  </section>
-
   <footer>
     <div class="footer-content">
       <div class="footer-brand">
@@ -326,17 +292,17 @@ footer { background: var(--primary); color: #fff; padding: 60px 40px 30px; }
       <div class="footer-column">
         <h5>Institucional</h5>
         <ul>
-          <li><a href="https://deivisan.github.io/dona-de-mim/#sobre">Sobre Nós</a></li>
-          <li><a href="https://deivisan.github.io/dona-de-mim/#lojas">Nossas Lojas</a></li>
-          <li><a href="https://deivisan.github.io/dona-de-mim/#trabalhe">Trabalhe Conosco</a></li>
+          <li><a href="https://deivisan.github.io/dona-de-mim/sobre-nos.html">Sobre Nós</a></li>
+          <li><a href="https://deivisan.github.io/dona-de-mim/contato.html">Fale Conosco</a></li>
+          <li><a href="https://deivisan.github.io/dona-de-mim/politicas.html">Políticas</a></li>
         </ul>
       </div>
       <div class="footer-column">
         <h5>Ajuda</h5>
         <ul>
-          <li><a href="https://deivisan.github.io/dona-de-mim/#ajuda">Central de Ajuda</a></li>
-          <li><a href="https://deivisan.github.io/dona-de-mim/#frete">Frete e Entrega</a></li>
-          <li><a href="https://deivisan.github.io/dona-de-mim/#trocas">Trocas e Devoluções</a></li>
+          <li><a href="https://deivisan.github.io/dona-de-mim/trocas.html">Trocas e Devoluções</a></li>
+          <li><a href="https://deivisan.github.io/dona-de-mim/frete.html">Frete e Entrega</a></li>
+          <li><a href="https://deivisan.github.io/dona-de-mim/guia-tamanhos.html">Guia de Tamanhos</a></li>
         </ul>
       </div>
       <div class="footer-column">

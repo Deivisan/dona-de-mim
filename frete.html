@@ -113,42 +113,6 @@ footer { background: var(--primary); color: #fff; padding: 60px 40px 30px; }
   .page-header h1 { font-size: 2rem; }
   .features, .footer-content { grid-template-columns: 1fr; }
 }
-
-.products { background: #fff; padding: 80px 0; }
-.products-grid { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
-.product-card { cursor: pointer; text-decoration: none; display: block; }
-.product-image { aspect-ratio: 3/4; background: #f5f5f5; margin-bottom: 16px; position: relative; overflow: hidden; }
-.product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-.product-card:hover .product-image img { transform: scale(1.05); }
-.product-tag { position: absolute; top: 15px; left: 15px; background: var(--secondary); color: #fff; padding: 4px 12px; font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; }
-.product-info h4 { font-family: var(--font-display); font-size: 1rem; font-weight: 400; margin-bottom: 8px; color: var(--primary); }
-.product-price { color: var(--secondary); font-weight: 500; }
-.product-original { color: var(--gray); text-decoration: line-through; font-size: 0.85rem; margin-left: 10px; }
-
-/* Product Detail */
-.product-detail { max-width: 1200px; margin: 60px auto; padding: 0 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-.product-gallery { aspect-ratio: 3/4; background: #f5f5f5; overflow: hidden; }
-.product-gallery img { width: 100%; height: 100%; object-fit: cover; }
-.product-info-detail h1 { font-family: var(--font-display); font-size: 2rem; font-weight: 400; margin-bottom: 10px; }
-.product-sku { color: var(--gray); font-size: 0.85rem; margin-bottom: 20px; }
-.product-price-detail { font-size: 2rem; color: var(--secondary); font-weight: 500; margin-bottom: 20px; }
-.product-price-detail .original { text-decoration: line-through; color: var(--gray); font-size: 1.2rem; margin-left: 15px; }
-.product-description { color: var(--gray); line-height: 1.8; margin-bottom: 30px; }
-.product-sizes { margin-bottom: 30px; }
-.product-sizes h4 { font-family: var(--font-display); font-size: 1rem; margin-bottom: 15px; }
-.size-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
-.size-btn { padding: 12px 20px; border: 1px solid var(--border); background: #fff; cursor: pointer; font-size: 0.9rem; transition: all 0.3s; }
-.size-btn:hover { border-color: var(--secondary); }
-.size-btn.selected { background: var(--secondary); color: #fff; border-color: var(--secondary); }
-
-@media (max-width: 1024px) {
-  .products-grid { grid-template-columns: repeat(2, 1fr); }
-  .product-detail { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 768px) {
-  .products-grid { grid-template-columns: 1fr; }
-}
 </style>
 </head>
 <body>
@@ -179,97 +143,44 @@ footer { background: var(--primary); color: #fff; padding: 60px 40px 30px; }
 
 
 <div class="page-header">
-  <h1>Blusa Plus Size Cinza Chique (DDM-0037)</h1>
-  <p class="breadcrumb">
-    <a href="https://deivisan.github.io/dona-de-mim/">Início</a><span>›</span>
-    <a href="https://deivisan.github.io/dona-de-mim/blusas.html">Blusas</a><span>›</span>
-    Blusa Plus Size Cinza Chique (DDM-0037)
-  </p>
+  <h1>Frete e Entrega</h1>
+  <p>Informações sobre entrega</p>
 </div>
 
-<section class="product-detail">
-  <div class="product-gallery">
-    <img src="https://deivisan.github.io/dona-de-mim/assets/imgs/produtos/blusas/DDM-0037-blusa-plus-size-cinza-chique-37.jpeg" alt="Blusa Plus Size Cinza Chique (DDM-0037)" onerror="this.src='https://deivisan.github.io/dona-de-mim/assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg'">
+<div class="page-content">
+  <h2>Condições de Frete</h2>
+  
+  <div class="highlight">
+    <h3>🚚 Frete Grátis</h3>
+    <p>Oferecemos <strong>frete grátis</strong> para todo o Brasil em pedidos acima de <strong>R$ 299,00</strong>!</p>
   </div>
-  <div class="product-info-detail">
-    <h1>Blusa Plus Size Cinza Chique (DDM-0037)</h1>
-    <p class="product-sku">SKU: DDM-0037</p>
-    <p class="product-price-detail">
-      R$ 113,49
-      
-    </p>
-    <p class="product-description">Blusa Plus Size em Cinza Chique. Tamanhos 46 ao 54.</p>
-    
-    <div class="product-sizes">
-      <h4>Selecione o tamanho:</h4>
-      <div class="size-buttons">
-        <button class="size-btn" onclick="selectSize(46)">46</button><button class="size-btn" onclick="selectSize(48)">48</button><button class="size-btn" onclick="selectSize(50)">50</button><button class="size-btn" onclick="selectSize(52)">52</button><button class="size-btn" onclick="selectSize(54)">54</button>
-      </div>
-    </div>
-    
-    <div class="product-actions">
-      <a href="https://wa.me/557591561769?text=Ol%C3%A1!%20%F0%9F%98%8A%0A%0AVi%20o%20produto%20*Blusa%20Plus%20Size%20Cinza%20Chique%20(DDM-0037)*%20(DDM-0037)%20no%20site%20e%20amei!%20%E2%9D%A4%EF%B8%8F%0A%0A%F0%9F%92%B0%20Valor%3A%20R%24%20113%2C49%0A%F0%9F%93%8F%20Gostaria%20de%20saber%20a%20disponibilidade%20dos%20tamanhos.%0A%0AAguardo!%20%E2%9C%A8" class="btn-whatsapp" target="_blank">
-        <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
-      </a>
-    </div>
-    
-    <div style="margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-      <p style="font-size: 0.9rem; color: var(--gray); margin-bottom: 10px;"><strong>Material:</strong> Linho</p>
-      <p style="font-size: 0.9rem; color: var(--gray);"><strong>Cuidados:</strong> Lavar à mão com sabão neutro. Não torcer. Secar à sombra. Passar pelo avesso.</p>
-    </div>
-  </div>
-</section>
 
-<section class="products" style="padding-top: 40px;">
-  <h2 class="section-title" style="font-family: var(--font-display); font-size: 2rem; text-align: center; margin-bottom: 30px;">Outros produtos que você pode gostar</h2>
-  <div class="products-grid">
-    
-    <a href="https://deivisan.github.io/dona-de-mim/produto-blusa-plus-size-rosa-delicado-1.html" class="product-card">
-      <div class="product-image">
-        <span class="product-tag">Novo</span>
-        <img src="https://deivisan.github.io/dona-de-mim/assets/imgs/produtos/blusas/DDM-0001-blusa-plus-size-rosa-delicado-1.jpeg" alt="Blusa Plus Size Rosa Delicado (DDM-0001)" onerror="this.src='https://deivisan.github.io/dona-de-mim/assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg'">
-      </div>
-      <div class="product-info">
-        <h4>Blusa Plus Size Rosa Delicado (DDM-0001)</h4>
-        <p class="product-price">R$ 150,70</p>
-      </div>
-    </a>
-  
-    <a href="https://deivisan.github.io/dona-de-mim/produto-blusa-plus-size-cinza-chique-7.html" class="product-card">
-      <div class="product-image">
-        <span class="product-tag">Destaque</span>
-        <img src="https://deivisan.github.io/dona-de-mim/assets/imgs/produtos/blusas/DDM-0007-blusa-plus-size-cinza-chique-7.jpeg" alt="Blusa Plus Size Cinza Chique (DDM-0007)" onerror="this.src='https://deivisan.github.io/dona-de-mim/assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg'">
-      </div>
-      <div class="product-info">
-        <h4>Blusa Plus Size Cinza Chique (DDM-0007)</h4>
-        <p class="product-price">R$ 108,30</p>
-      </div>
-    </a>
-  
-    <a href="https://deivisan.github.io/dona-de-mim/produto-blusa-plus-size-cinza-chique-8.html" class="product-card">
-      <div class="product-image">
-        <span class="product-tag">Destaque</span>
-        <img src="https://deivisan.github.io/dona-de-mim/assets/imgs/produtos/blusas/DDM-0008-blusa-plus-size-cinza-chique-8.jpeg" alt="Blusa Plus Size Cinza Chique (DDM-0008)" onerror="this.src='https://deivisan.github.io/dona-de-mim/assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg'">
-      </div>
-      <div class="product-info">
-        <h4>Blusa Plus Size Cinza Chique (DDM-0008)</h4>
-        <p class="product-price">R$ 138,26<span class="product-original">R$ 162,66</span></p>
-      </div>
-    </a>
-  
-    <a href="https://deivisan.github.io/dona-de-mim/produto-blusa-plus-size-cinza-chique-9.html" class="product-card">
-      <div class="product-image">
-        
-        <img src="https://deivisan.github.io/dona-de-mim/assets/imgs/produtos/blusas/DDM-0009-blusa-plus-size-cinza-chique-9.jpeg" alt="Blusa Plus Size Cinza Chique (DDM-0009)" onerror="this.src='https://deivisan.github.io/dona-de-mim/assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg'">
-      </div>
-      <div class="product-info">
-        <h4>Blusa Plus Size Cinza Chique (DDM-0009)</h4>
-        <p class="product-price">R$ 136,09<span class="product-original">R$ 160,11</span></p>
-      </div>
-    </a>
-  
+  <h3>Prazos de Entrega</h3>
+  <ul>
+    <li><strong>Região Sul, Sudeste:</strong> 3 a 7 dias úteis</li>
+    <li><strong>Região Nordeste, Centro-Oeste:</strong> 5 a 10 dias úteis</li>
+    <li><strong>Região Norte:</strong> 7 a 15 dias úteis</li>
+  </ul>
+
+  <h3>Como Rastrear</h3>
+  <p>Assim que seu pedido for despachado, você receberá o código de rastreamento pelo WhatsApp. É só acessar o site dos Correios ou app de rastreamento para acompanhar!</p>
+
+  <h3>Importante</h3>
+  <ul>
+    <li>Verifique o endereço de entrega antes de finalizar o pedido</li>
+    <li>É necessário ter alguém para receber a encomenda</li>
+    <li>Em caso de endereço incorreto, entre em contato imediatamente</li>
+  </ul>
+
+  <div class="highlight">
+    <h3>💜 Dúvidas?</h3>
+    <p>Nos chame no WhatsApp! We're sempre prontos para ajudar. 😊</p>
   </div>
-</section>
+
+  <a href="https://wa.me/557591561769?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20frete%20e%20entrega." class="btn-whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+  </a>
+</div>
 
 
   <section class="features">
@@ -320,10 +231,3 @@ footer { background: var(--primary); color: #fff; padding: 60px 40px 30px; }
 </body>
 </html>
 
-
-<script>
-function selectSize(size) {
-  document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
-  event.target.classList.add('selected');
-}
-</script>
