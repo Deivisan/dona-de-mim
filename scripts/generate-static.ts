@@ -214,10 +214,11 @@ const generateHeader = (currentPage = '') => `
       <div class="header-actions">
         <a href="${BASE_URL}contato.html" aria-label="Buscar"><i class="fas fa-search"></i></a>
         <a href="${BASE_URL}contato.html" aria-label="Favoritos"><i class="far fa-heart"></i></a>
+        <a href="${BASE_URL}#carrinho" aria-label="Carrinho"><i class="fas fa-shopping-bag"></i></a>
       </div>
     </div>
   </header>
-`
+ `
 
 // Função para gerar o footer
 const generateFooter = () => `
@@ -601,163 +602,6 @@ console.log('✅ Páginas institucionais geradas')
 // PÁGINA HOME (INDEX) - CSS + GERAÇÃO
 // ============================================
 
-// CSS para Home
-const heroCSS = `
-/* Hero */
-.hero { height: 60vh; background: linear-gradient(135deg, #f5f5f5 0%, #e8e4df 100%); display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,168,124,0.15) 0%, transparent 70%); border-radius: 50%; }
-.hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 20px; }
-.hero-subtitle { font-size: 0.9rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gray); margin-bottom: 20px; }
-.hero h1 { font-family: var(--font-display); font-size: 3rem; font-weight: 400; margin-bottom: 20px; line-height: 1.1; }
-.hero h1 span { color: var(--secondary); font-style: italic; }
-.hero-tagline { font-size: 1.3rem; color: var(--primary); font-weight: 500; margin-bottom: 15px; }
-.hero p { font-size: 1.1rem; color: var(--gray); max-width: 500px; margin: 0 auto 40px; }
-.hero-sizes { display: inline-block; background: var(--secondary); color: #fff; padding: 8px 24px; border-radius: 30px; font-size: 0.9rem; font-weight: 500; letter-spacing: 1px; margin-bottom: 30px; }
-
-/* About */
-.about { background: #fff; padding: 80px 40px; text-align: center; }
-.about-content { max-width: 800px; margin: 0 auto; }
-.about h2 { font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 20px; font-weight: 400; }
-.about h2 span { color: var(--secondary); }
-.about p { font-size: 1.1rem; color: var(--gray); line-height: 1.8; }
-
-/* Categories */
-.categories { max-width: 1400px; margin: 60px auto; padding: 0 40px; }
-.section-title { font-family: var(--font-display); font-size: 2.5rem; text-align: center; margin-bottom: 40px; font-weight: 400; }
-.categories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.category-card { position: relative; aspect-ratio: 3/4; overflow: hidden; cursor: pointer; }
-.category-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-.category-card:hover img { transform: scale(1.05); }
-.category-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%); display: flex; align-items: flex-end; padding: 30px; }
-.category-info h3 { font-family: var(--font-display); font-size: 1.5rem; color: #fff; font-weight: 400; margin-bottom: 8px; }
-.category-info span { color: rgba(255,255,255,0.8); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
-.category-link { text-decoration: none; display: block; }
-
-/* Instagram */
-.instagram-section { background: #fff; padding: 80px 40px; text-align: center; }
-.instagram-link { display: inline-flex; align-items: center; gap: 10px; color: var(--primary); text-decoration: none; font-size: 1.1rem; font-weight: 500; margin-bottom: 40px; transition: color 0.3s; }
-.instagram-link:hover { color: var(--secondary); }
-.instagram-link i { font-size: 1.5rem; }
-.insta-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; max-width: 1000px; margin: 0 auto; }
-.insta-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; transition: opacity 0.3s; }
-.insta-grid img:hover { opacity: 0.8; }
-
-@media (max-width: 1024px) {
-  .categories-grid, .products-grid { grid-template-columns: repeat(2, 1fr); }
-  .insta-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 768px) {
-  .hero h1 { font-size: 2rem; }
-  .categories-grid, .products-grid { grid-template-columns: 1fr; }
-  .insta-grid { grid-template-columns: repeat(2, 1fr); }
-}
-`
-
-// Home CSS = base + hero
-const homeCSS = generateCSS() + productCSS + heroCSS
-
-const generateHomeHeader = () => `
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dona De Mim | Plus Size - Moda Para Mulheres Reais</title>
-  <meta name="description" content="Dona De Mim - Moda plus size Do 46 ao 54. Realçando as curvas de quem é dona de si.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>${homeCSS}</style>
-</head>
-<body>
-  <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage('general')}" target="_blank" class="floating-whatsapp" aria-label="Fale conosco no WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <header>
-    <div class="header-top">Moda Plus Size &bull; Do 46 ao 54 &bull; ❤️ Mulheres Reais</div>
-    <div class="header-main">
-      <a href="${BASE_URL}" class="logo">DONA DE <span>MIM</span></a>
-      <nav>
-        <ul>
-          <li><a href="${BASE_URL}#novidades">Novidades</a></li>
-          <li><a href="${BASE_URL}blusas.html">Blusas</a></li>
-          <li><a href="${BASE_URL}vestidos.html">Vestidos</a></li>
-          <li><a href="${BASE_URL}conjuntos.html">Conjuntos</a></li>
-          <li><a href="${BASE_URL}sobre-nos.html">Sobre</a></li>
-          <li><a href="${BASE_URL}contato.html">Contato</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <a href="${BASE_URL}contato.html" aria-label="Buscar"><i class="fas fa-search"></i></a>
-        <a href="${BASE_URL}contato.html" aria-label="Favoritos"><i class="far fa-heart"></i></a>
-      </div>
-    </div>
-  </header>
-`
-
-const indexContent = `
-${generateHomeHeader()}
-
-<section class="hero">
-  <div class="hero-content">
-    <p class="hero-subtitle">Moda Plus Size</p>
-    <h1>Realçando As Curvas <span>De Quem É</span> Dona De Si</h1>
-    <p class="hero-tagline">Moda Para Mulheres Reais ❤️</p>
-    <span class="hero-sizes">Do 46 ao 54</span>
-    <br><br>
-    <a href="${BASE_URL}blusas.html" class="btn">Ver Coleção</a>
-  </div>
-</section>
-
-<section class="about" id="sobre">
-  <div class="about-content">
-    <h2>Bem-vinda à <span>Dona De Mim</span></h2>
-    <p>Somos uma marca feita para mulheres reais, que celebra a diversidade e a beleza de cada corpo. Nossa missão é realçar suas curvas com peças exclusivas, modernas e cheias de estilo. Do 46 ao 54, aqui você encontra moda que te representa. <strong>A DONA</strong> é quem decide o que usar. ❤️</p>
-  </div>
-</section>
-
-<section class="categories" id="colecoes">
-  <h2 class="section-title">Nossas Coleções</h2>
-  <div class="categories-grid">
-    ${generateCategoryCard('vestidos', 'Vestidos')}
-    ${generateCategoryCard('blusas', 'Blusas')}
-    ${generateCategoryCard('conjuntos', 'Conjuntos')}
-  </div>
-</section>
-
-<section class="products" id="novidades">
-  <h2 class="section-title">Novidades</h2>
-  <div class="products-grid">
-    ${products.filter(p => p.ativo).slice(0, 8).map(p => generateProductCard(p)).join('')}
-  </div>
-</section>
-
-<section class="instagram-section" id="contato">
-  <a href="https://www.instagram.com/use_donademiim/" target="_blank" class="instagram-link">
-    <i class="fab fa-instagram"></i>@use_donademiim
-  </a>
-  <div class="insta-grid">
-    <img src="${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.58.jpeg" alt="@use_donademiim">
-    <img src="${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.59.jpeg" alt="@use_donademiim">
-    <img src="${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.40.jpeg" alt="@use_donademiim">
-    <img src="${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.39.jpeg" alt="@use_donademiim">
-    <img src="${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.47.jpeg" alt="@use_donademiim">
-    <img src="${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.46 (1).jpeg" alt="@use_donademiim">
-  </div>
-</section>
-
-${generateFooter()}
-`
-
-await Bun.write('./index.html', indexContent)
-console.log('✅ Gerado: index.html')
-
-// ============================================
-// PÁGINAS DE PRODUTOS (com mensagens padronizadas)
-// ============================================
-
 // Função para gerar card de produto
 const generateProductCard = (product: typeof products[0]) => {
   const price = product.preco_promocional || product.preco_venda
@@ -845,7 +689,125 @@ const productCSS = `
 }
 `
 
-// Modificar generateCSS para incluir productCSS
+// CSS para Home
+const heroCSS = `
+/* Hero */
+.hero { height: 60vh; background: linear-gradient(135deg, #f5f5f5 0%, #e8e4df 100%); display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,168,124,0.15) 0%, transparent 70%); border-radius: 50%; }
+.hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 20px; }
+.hero-subtitle { font-size: 0.9rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gray); margin-bottom: 20px; }
+.hero h1 { font-family: var(--font-display); font-size: 3rem; font-weight: 400; margin-bottom: 20px; line-height: 1.1; }
+.hero h1 span { color: var(--secondary); font-style: italic; }
+.hero-tagline { font-size: 1.3rem; color: var(--primary); font-weight: 500; margin-bottom: 15px; }
+.hero p { font-size: 1.1rem; color: var(--gray); max-width: 500px; margin: 0 auto 40px; }
+.hero-sizes { display: inline-block; background: var(--secondary); color: #fff; padding: 8px 24px; border-radius: 30px; font-size: 0.9rem; font-weight: 500; letter-spacing: 1px; margin-bottom: 30px; }
+
+/* About */
+.about { background: #fff; padding: 80px 40px; text-align: center; }
+.about-content { max-width: 800px; margin: 0 auto; }
+.about h2 { font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 20px; font-weight: 400; }
+.about h2 span { color: var(--secondary); }
+.about p { font-size: 1.1rem; color: var(--gray); line-height: 1.8; }
+
+/* Categories */
+.categories { max-width: 1400px; margin: 60px auto; padding: 0 40px; }
+.section-title { font-family: var(--font-display); font-size: 2.5rem; text-align: center; margin-bottom: 40px; font-weight: 400; }
+.categories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.category-card { position: relative; aspect-ratio: 3/4; overflow: hidden; cursor: pointer; }
+.category-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.category-card:hover img { transform: scale(1.05); }
+.category-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%); display: flex; align-items: flex-end; padding: 30px; }
+.category-info h3 { font-family: var(--font-display); font-size: 1.5rem; color: #fff; font-weight: 400; margin-bottom: 8px; }
+.category-info span { color: rgba(255,255,255,0.8); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
+.category-link { text-decoration: none; display: block; }
+
+/* Instagram */
+.instagram-section { background: #fff; padding: 80px 40px; text-align: center; }
+.instagram-link { display: inline-flex; align-items: center; gap: 10px; color: var(--primary); text-decoration: none; font-size: 1.1rem; font-weight: 500; margin-bottom: 40px; transition: color 0.3s; }
+.instagram-link:hover { color: var(--secondary); }
+.instagram-link i { font-size: 1.5rem; }
+.insta-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; max-width: 1000px; margin: 0 auto; }
+.insta-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; transition: opacity 0.3s; }
+.insta-grid img:hover { opacity: 0.8; }
+
+@media (max-width: 1024px) {
+  .categories-grid, .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .insta-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .categories-grid, .products-grid { grid-template-columns: 1fr; }
+  .insta-grid { grid-template-columns: repeat(2, 1fr); }
+}
+`
+
+// Home CSS = base + hero
+const homeCSS = generateCSS() + productCSS + heroCSS
+
+// Reuse the same header for home and category pages
+const generateHomeHeader = () => generateHeader('').replace(
+  `<style>${generateCSS()}</style>`,
+  `<style>${homeCSS}</style>`
+)
+
+const indexContent = `
+${generateHomeHeader()}
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-subtitle">Moda Plus Size</p>
+    <h1>Realçando As Curvas <span>De Quem É</span> Dona De Si</h1>
+    <p class="hero-tagline">Moda Para Mulheres Reais ❤️</p>
+    <span class="hero-sizes">Do 46 ao 54</span>
+    <br><br>
+    <a href="${BASE_URL}blusas.html" class="btn">Ver Coleção</a>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="about-content">
+    <h2>Bem-vinda à <span>Dona De Mim</span></h2>
+    <p>Somos uma marca feita para mulheres reais, que celebra a diversidade e a beleza de cada corpo. Nossa missão é realçar suas curvas com peças exclusivas, modernas e cheias de estilo. Do 46 ao 54, aqui você encontra moda que te representa. <strong>A DONA</strong> é quem decide o que usar. ❤️</p>
+  </div>
+</section>
+
+<section class="categories" id="colecoes">
+  <h2 class="section-title">Nossas Coleções</h2>
+  <div class="categories-grid">
+    ${generateCategoryCard('vestidos', 'Vestidos')}
+    ${generateCategoryCard('blusas', 'Blusas')}
+    ${generateCategoryCard('conjuntos', 'Conjuntos')}
+  </div>
+</section>
+
+<section class="products" id="novidades">
+  <h2 class="section-title">Novidades</h2>
+  <div class="products-grid">
+    ${products.filter(p => p.ativo).slice(0, 8).map(p => generateProductCard(p)).join('')}
+  </div>
+</section>
+
+<section class="instagram-section" id="contato">
+  <a href="https://www.instagram.com/use_donademiim/" target="_blank" class="instagram-link">
+    <i class="fab fa-instagram"></i>@use_donademiim
+  </a>
+  <div class="insta-grid">
+    <img src="${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.58.jpeg" alt="@use_donademiim">
+    <img src="${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.59.jpeg" alt="@use_donademiim">
+    <img src="${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.40.jpeg" alt="@use_donademiim">
+    <img src="${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.39.jpeg" alt="@use_donademiim">
+    <img src="${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.47.jpeg" alt="@use_donademiim">
+    <img src="${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.46 (1).jpeg" alt="@use_donademiim">
+  </div>
+</section>
+
+${generateFooter()}
+`
+
+await Bun.write('./index.html', indexContent)
+console.log('✅ Gerado: index.html')
+
+// CSS completo para páginas de categoria/produtos
 const fullCSS = generateCSS() + productCSS
 
 // Modificar generateHeader para usar fullCSS
