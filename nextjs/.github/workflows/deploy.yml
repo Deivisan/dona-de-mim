@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
+  contents: write
+  pages: read
   id-token: write
 
 concurrency:
@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,25 +27,17 @@ jobs:
           bun-version: latest
 
       - name: Install dependencies
-        working-directory: ./nextjs
         run: bun install
 
-      - name: Build
-        working-directory: ./nextjs
+      - name: Build Next.js Static Site
         run: bun run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./nextjs/out
-
-  deploy:
-    needs: build
-    runs-on: github-pages
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          publish_branch: gh-pages
+          cname: deivisan.github.io
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
