@@ -190,7 +190,7 @@ const generateHeader = (currentPage = '') => `
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>${generateCSS()}</style>
+  <link rel="stylesheet" href="${BASE_URL}assets/css/styles.css">
 </head>
 <body>
   <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage('general')}" target="_blank" class="floating-whatsapp" aria-label="Fale conosco no WhatsApp">
@@ -744,10 +744,10 @@ const heroCSS = `
 // Home CSS = base + hero
 const homeCSS = generateCSS() + productCSS + heroCSS
 
-// Reuse the same header for home and category pages
+// Reuse the same header for home and category pages (now with external CSS)
 const generateHomeHeader = () => generateHeader('').replace(
-  `<style>${generateCSS()}</style>`,
-  `<style>${homeCSS}</style>`
+  `<link rel="stylesheet" href="${BASE_URL}assets/css/styles.css">`,
+  `<link rel="stylesheet" href="${BASE_URL}assets/css/styles.css">`
 )
 
 const indexContent = `
@@ -823,7 +823,7 @@ const generateHeaderWithCSS = (currentPage = '') => `
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>${fullCSS}</style>
+  <link rel="stylesheet" href="${BASE_URL}assets/css/styles.css">
 </head>
 <body>
   <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage('general')}" target="_blank" class="floating-whatsapp" aria-label="Fale conosco no WhatsApp">
