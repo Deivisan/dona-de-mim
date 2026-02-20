@@ -8,6 +8,7 @@ import { readdirSync } from 'fs'
 
 const BASE_URL = 'https://deivisan.github.io/dona-de-mim/'
 const WHATSAPP_NUMBER = '557591561769'
+const FUNDADORA = 'Uiara Paula'
 
 // Mapear SKU -> nome do arquivo real
 function getImageMap() {
@@ -231,7 +232,7 @@ const generateFooter = () => `
     <div class="footer-content">
       <div class="footer-brand">
         <a href="${BASE_URL}" class="logo">DONA DE <span>MIM</span></a>
-        <p>Moda plus size feita para mulheres reais. Realçando as curvas de quem é Dona de si.<br><br><strong>A DONA</strong> - 75 9156-1769</p>
+        <p>Moda plus size feita para mulheres reais. Realçando as curvas de quem é Dona de si.<br><br><strong>Uiara Paula</strong> - Fundadora<br>📱 75 9156-1769</p>
         <div class="footer-social">
           <a href="https://www.instagram.com/use_donademiim/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://wa.me/${WHATSAPP_NUMBER}" target="_blank" aria-label="WhatsApp" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
