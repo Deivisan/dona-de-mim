@@ -286,14 +286,20 @@ const generateProductCard = (product: typeof products[0], baseUrl = BASE_URL) =>
   const originalPrice = product.preco_promocional ? product.preco_venda : null
   const tag = product.lancamento ? 'Novo' : (product.destaque ? 'Destaque' : (product.em_promocao ? 'Promoção' : null))
   
-  const imgFile = product.imagem_principal.arquivo_novo.replace('.jpeg', '').replace(/ /g, '-').toLowerCase()
-  const imgPath = `${baseUrl}assets/imgs/produtos/${product.categoria}/${imgFile}.jpeg`
+  // Tentar múltiplos padrões de nome de arquivo
+  const patterns = [
+    `assets/imgs/produtos/${product.categoria}/${product.sku}-${product.slug}.jpeg`,
+    `assets/imgs/produtos/${product.categoria}/${product.sku}-${product.imagem_principal.arquivo_original}`,
+    `assets/imgs/colecoes/${product.imagem_principal.arquivo_original}`,
+  ]
+  const imgPath = baseUrl + patterns[0]
+  const fallbackPath = baseUrl + 'assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg'
   
   return `
     <a href="${baseUrl}produto-${product.slug}.html" class="product-card">
       <div class="product-image">
         ${tag ? `<span class="product-tag">${tag}</span>` : ''}
-        <img src="${imgPath}" alt="${product.nome}" onerror="this.src='${baseUrl}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg'">
+        <img src="${imgPath}" alt="${product.nome}" onerror="this.src='${fallbackPath}'">
       </div>
       <div class="product-info">
         <h4>${product.nome}</h4>
@@ -409,8 +415,8 @@ ${generateFooter()}
 
 // 3. Gerar páginas de produtos individuais
 for (const product of products.filter(p => p.ativo)) {
-  const imgFile = product.imagem_principal.arquivo_novo.replace('.jpeg', '').replace(/ /g, '-').toLowerCase()
-  const imgPath = `assets/imgs/produtos/${product.categoria}/${imgFile}.jpeg`
+  // Usar SKU para imagem correta
+  const imgPath = `${BASE_URL}assets/imgs/produtos/${product.categoria}/${product.sku}-${product.slug}.jpeg`
   
   const sizes = product.tamanhos_disponiveis.map(s => 
     `<button class="size-btn" onclick="selectSize(${s})">${s}</button>`
