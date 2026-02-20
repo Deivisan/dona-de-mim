@@ -329,6 +329,9 @@ const generateProductCard = (product: typeof products[0]) => {
   const originalPrice = product.preco_promocional ? product.preco_venda : null
   const tag = product.lancamento ? 'Novo' : (product.destaque ? 'Destaque' : (product.em_promocao ? 'Promoção' : null))
   
+  // Gerar nome único baseado no SKU
+  const uniqueName = `${product.nome} (${product.sku})`
+  
   const imgPath = getImagePath(product)
   const fallbackPath = `${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg`
   
@@ -336,10 +339,10 @@ const generateProductCard = (product: typeof products[0]) => {
     <a href="${BASE_URL}produto-${product.slug}.html" class="product-card">
       <div class="product-image">
         ${tag ? `<span class="product-tag">${tag}</span>` : ''}
-        <img src="${imgPath}" alt="${product.nome}" onerror="this.src='${fallbackPath}'">
+        <img src="${imgPath}" alt="${uniqueName}" onerror="this.src='${fallbackPath}'">
       </div>
       <div class="product-info">
-        <h4>${product.nome}</h4>
+        <h4>${uniqueName}</h4>
         <p class="product-price">R$ ${price.toFixed(2).replace('.', ',')}${originalPrice ? `<span class="product-original">R$ ${originalPrice.toFixed(2).replace('.', ',')}</span>` : ''}</p>
       </div>
     </a>
@@ -458,6 +461,9 @@ for (const product of products.filter(p => p.ativo)) {
   const imgPath = getImagePath(product)
   const fallbackPath = `${BASE_URL}assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.45.jpeg`
   
+  // Gerar nome único baseado no SKU
+  const uniqueName = `${product.nome} (${product.sku})`
+  
   const sizes = product.tamanhos_disponiveis.map(s => 
     `<button class="size-btn" onclick="selectSize(${s})">${s}</button>`
   ).join('')
@@ -466,26 +472,26 @@ for (const product of products.filter(p => p.ativo)) {
   const originalPrice = product.preco_promocional ? product.preco_venda : null
   
   // Mensagem WhatsApp
-  const whatsappMsg = encodeURIComponent(`Olá! Gostaria de comprar:\n\n*${product.nome}*\nTamanho: \nQuantidade: 1\n\nValor: R$ ${price.toFixed(2).replace('.', ',')}`)
+  const whatsappMsg = encodeURIComponent(`Olá! Gostaria de comprar:\n\n*${uniqueName}*\nTamanho: \nQuantidade: 1\n\nValor: R$ ${price.toFixed(2).replace('.', ',')}`)
   
   const productContent = `
 ${generateHeader()}
 
 <div class="page-header">
-  <h1>${product.nome}</h1>
+  <h1>${uniqueName}</h1>
   <p class="breadcrumb">
     <a href="${BASE_URL}">Início</a><span>›</span>
     <a href="${BASE_URL}${product.categoria}.html">${product.categoria.charAt(0).toUpperCase() + product.categoria.slice(1)}</a><span>›</span>
-    ${product.nome}
+    ${uniqueName}
   </p>
 </div>
 
 <section class="product-detail">
   <div class="product-gallery">
-    <img src="${imgPath}" alt="${product.nome}" onerror="this.src='${fallbackPath}'">
+    <img src="${imgPath}" alt="${uniqueName}" onerror="this.src='${fallbackPath}'">
   </div>
   <div class="product-info-detail">
-    <h1>${product.nome}</h1>
+    <h1>${uniqueName}</h1>
     <p class="product-sku">SKU: ${product.sku}</p>
     <p class="product-price-detail">
       R$ ${price.toFixed(2).replace('.', ',')}
