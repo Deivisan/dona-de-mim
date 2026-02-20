@@ -162,15 +162,12 @@ export function HomePage(cartCount: number = 0): string {
   </section>
 
   <section class="instagram-section" id="contato">
-    <a href="https://www.instagram.com/use_donademiim/" target="_blank" class="instagram-link">
-      <i class="fab fa-instagram"></i> Siga @use_donademiim
-    </a>
-    <div class="insta-grid">
-      ${products
-        .filter((p: Product) => p.ativo)
-        .slice(0, 6)
-        .map((p: Product) => `<img src="${getImagePath(p)}" alt="${p.nome}" loading="lazy">`)
-        .join('')}
+    <div class="instagram-content">
+      <h2 class="section-title">Siga-nos no Instagram</h2>
+      <p class="instagram-subtitle">Junte-se à nossa comunidade e inspire-se com mulheres reais que são Dona de Mim</p>
+      <a href="https://www.instagram.com/use_donademiim/" target="_blank" class="btn btn-instagram">
+        <i class="fab fa-instagram"></i> @use_donademiim
+      </a>
     </div>
   </section>
 
