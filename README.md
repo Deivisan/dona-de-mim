@@ -1,4 +1,21 @@
-# 🛍️ Dona de Mim - Documentação Técnica v1.0
+# 🛍️ Dona de Mim - E-commerce Plus Size
+
+<p align="center">
+  <img src="https://deivisan.github.io/dona-de-mim/assets/imgs/colecoes/WhatsApp Image 2026-02-19 at 13.18.47 (1).jpeg" alt="Dona de Mim - Moda Plus Size" width="300">
+</p>
+
+<p align="center">
+  <strong>Moda Para Mulheres Reais ❤️</strong><br>
+  <em>Realçando as curvas de quem é dona de si</em>
+</p>
+
+<p align="center">
+  <a href="https://deivisan.github.io/dona-de-mim/"><img src="https://img.shields.io/badge/🔗 Live Demo-GitHub Pages-blue" alt="Live Demo"></a>
+  <a href="https://www.instagram.com/use_donademiim/"><img src="https://img.shields.io/badge/📸 Instagram-E1305C" alt="Instagram"></a>
+  <a href="https://wa.me/557591561769"><img src="https://img.shields.io/badge/💬 WhatsApp-25D366" alt="WhatsApp"></a>
+</p>
+
+---
 
 ## 📋 Resumo do Projeto
 
@@ -11,182 +28,288 @@
 | **Slogan** | Moda Para Mulheres Reais ❤️ |
 | **Público-alvo** | Mulheres 25-50 anos |
 | **Tamanhos** | 46, 48, 50, 52, 54 |
-| **CEO/Fundadora** | A DONA (75 9156-1769) |
+| **WhatsApp** | 75 9156-1769 |
 | **Instagram** | @use_donademiim |
+| **Deploy** | GitHub Pages |
 
 ---
 
-## 📂 Estrutura de Arquivos
+## 🔗 URLs do Site
+
+| Página | URL |
+|--------|-----|
+| **Home** | https://deivisan.github.io/dona-de-mim/ |
+| **Blusas** | https://deivisan.github.io/dona-de-mim/blusas.html |
+| **Vestidos** | https://deivisan.github.io/dona-de-mim/vestidos.html |
+| **Conjuntos** | https://deivisan.github.io/dona-de-mim/conjuntos.html |
+| **Shorts** | https://deivisan.github.io/dona-de-mim/shorts.html |
+
+---
+
+## ⚠️ Status: Protótipo - Dados Emulados
+
+> **Nota Importante:** Este projeto está em **fase de protótipo**. Os dados dos produtos (nomes, descrições, preços) são **emulados/mocados** baseados em análise de imagens. As imagens reais precisam de OCR e processamento para associação correta.
+
+### O que está funcionando:
+
+- ✅ Landing page responsiva com design moderno
+- ✅ Navegação entre categorias (blusas, vestidos, conjuntos, shorts)
+- ✅ Páginas individuais de produtos com detalhes
+- ✅ Botão WhatsApp para compras diretas
+- ✅ Sistema de seleção de tamanhos
+- ✅ Imagens mapeadas por SKU (funcionando)
+- ✅ Deploy automático via GitHub Actions
+
+### O que precisa ser implementado:
+
+- 🔄 **OCR de Imagens** - Extrair nome, cor, estilo automaticamente das fotos originais
+- 🔄 **Descrição IA** - Gerar descrições únicas baseadas na análise visual
+- 🔄 **Banco de Dados Real** - Integrar com banco de dados SQLite ou PostgreSQL
+- 🔄 **Carrinho de Compras** - Stateful cart (atualmente apenas redireciona para WhatsApp)
+- 🔄 **Domínio Próprio** - Configurar donademim.com.br
+
+---
+
+## 🗂️ Estrutura do Projeto
 
 ```
 dona-de-mim/
-├── index.html                    # Landing page principal
-├── AGENTS.md                     # Contexto para IA
-├── README.md                     # Este arquivo
-├── database/
-│   ├── schema.sql               # Schema SQL completo
-│   ├── produtos.db              # Banco SQLite
-│   ├── catalogo_imagens.json    # Análise de todas imagens
-│   ├── catalogo_produtos.json   # Catálogo completo de produtos
-│   └── renomeacoes.json         # Log de renomeações
+├── index.html                    # Landing page (home)
+├── blusas.html                  # Página de blusas
+├── vestidos.html                # Página de vestidos
+├── conjuntos.html               # Página de conjuntos
+├── shorts.html                  # Página de shorts
+├── produto-*.html               # Páginas individuais de produtos
+│
 ├── scripts/
-│   ├── analyze_images.py        # Analisador de imagens
-│   ├── generate_catalog.py      # Gerador de catálogo
-│   └── rename_images.py         # Renomeador de imagens
-└── assets/
-    └── imgs/
-        ├── colecoes/            # Imagens originais (WhatsApp)
-        ├── produtos/            # Imagens organizadas por categoria
-        │   ├── blusas/          # 27 blusas
-        │   └── vestidos/        # 16 vestidos
-        ├── categorias/          # Imagens de categorias
-        └── banners/             # Banners promocionais
+│   ├── generate-static.ts       # Gerador de páginas estáticas
+│   ├── analyze_images.py       # Analisador de imagens
+│   ├── generate_catalog.py     # Gerador de catálogo
+│   └── rename_images.py        # Renomeador de imagens
+│
+├── src/
+│   ├── data/
+│   │   └── products.ts         # Dados dos produtos (emulados)
+│   ├── views/
+│   │   ├── home.ts             # Template home
+│   │   ├── category.ts         # Template categoria
+│   │   ├── product.ts         # Template produto
+│   │   └── static.ts           # Páginas institucionais
+│   ├── components/             # Componentes
+│   └── server.ts               # Servidor Bun (para desenvolvimento)
+│
+├── assets/
+│   └── imgs/
+│       ├── colecoes/           # Imagens originais do WhatsApp
+│       └── produtos/           # Imagens organizadas por categoria
+│           ├── blusas/         # 27 imagens de blusas
+│           ├── vestidos/        # 16 imagens de vestidos
+│           └── conjuntos/      # Imagens de conjuntos
+│
+├── database/
+│   ├── schema.sql             # Schema SQL
+│   ├── produtos.db             # Banco SQLite
+│   └── catalogo_imagens.json  # Análise de imagens
+│
+├── .github/
+│   └── workflows/
+│       └── static.yml          # Deploy automático GitHub Pages
+│
+└── README.md                   # Este arquivo
 ```
 
 ---
 
-## 🗄️ Banco de Dados
+## 🏗️ Stack Tecnológica
 
-### Tabelas Principais
+### Atual (v1.0 - Protótipo)
+- **Frontend:** HTML5, CSS3 (variables, grid, flexbox), JavaScript vanilla
+- **Backend (dev):** Bun + Elysia (servidor local)
+- **Database:** SQLite (embutido)
+- **Deploy:** GitHub Pages (estático)
+- **Scripts:** Python + Bun
 
-| Tabela | Descrição |
-|--------|-----------|
-| `produtos` | Catálogo de produtos |
-| `categorias` | Categorias de produtos |
-| `produto_imagens` | Imagens dos produtos |
-| `produto_tamanhos` | Estoque por tamanho |
-| `clientes` | Cadastro de clientes |
-| `pedidos` | Pedidos realizados |
-| `pedido_itens` | Itens de cada pedido |
-
-### Categorias
-
-1. **Vestidos** - 16 produtos
-2. **Blusas** - 27 produtos
-
-### Tamanhos Plus Size
-
-| Número | Equivalente |
-|--------|-------------|
-| 46 | GG |
-| 48 | XGG |
-| 50 | XXG |
-| 52 | XXXG |
-| 54 | XXXXG |
+### Futuro (v2.0 - Produção)
+- **Frontend:** Next.js 15 (App Router) + TypeScript
+- **Styling:** Tailwind CSS
+- **Backend API:** Next.js API Routes
+- **Database:** PostgreSQL (Supabase)
+- **Payments:** MercadoPago ou Stripe
+- **Images:** Cloudinary ou similar (OCR + resize)
 
 ---
 
-## 📦 Catálogo de Produtos
+## 📊 Catálogo de Produtos (Emulado)
 
-### Resumo
+### Resumo Atual
 
-- **Total de produtos:** 43
-- **Produtos em destaque:** 8
-- **Lançamentos:** 4
-- **Total de variações (tamanhos):** 215
+| Categoria | Qtd | Status Imagens |
+|-----------|-----|----------------|
+| Blusas | 27 | ✅ Mapeadas |
+| Vestidos | 16 | ✅ Mapeadas |
+| Conjuntos | 3 | ✅ Mapeadas |
+| Shorts | 1 | ✅ Mapeadas |
+| **Total** | **47** | **100%** |
 
-### Estrutura de Produto
+### Estrutura de Dados (Emulada)
 
-```json
-{
-  "id": 1,
-  "sku": "DDM-0001",
-  "nome": "Blusa Plus Size Rosa Delicado",
-  "slug": "blusa-plus-size-rosa-delicado-1",
-  "descricao": "...",
-  "descricao_curta": "...",
-  "categoria": "blusas",
-  "preco_venda": 150.70,
-  "preco_promocional": null,
-  "em_promocao": false,
-  "destaque": true,
-  "lancamento": true,
-  "ativo": true,
-  "imagem_principal": {
-    "arquivo_original": "...",
-    "arquivo_novo": "...",
-    "dimensoes": {"largura": 587, "altura": 576},
-    "cor_dominante": "rosa",
-    "paleta": [...]
-  },
-  "tamanhos_disponiveis": [46, 48, 50, 52, 54],
-  "material": "Algodão",
-  "cuidados": "..."
+```typescript
+interface Product {
+  id: number
+  sku: string                    // Ex: "DDM-0001"
+  nome: string                   // Emulado - precisa OCR
+  slug: string                   // URL amigável
+  descricao: string              // Emulada - precisa IA
+  categoria: 'blusas' | 'vestidos' | 'conjuntos' | 'shorts'
+  preco_venda: number
+  preco_promocional: number | null
+  em_promocao: boolean
+  destaque: boolean
+  lancamento: boolean
+  ativo: boolean
+  imagem_principal: {
+    arquivo_original: string     // Nome original do WhatsApp
+    arquivo_novo: string         // Nome renomeado
+    cor_dominante: string        // Extraído da imagem
+    paleta: Color[]             // Cores detectadas
+  }
+  tamanhos_disponiveis: number[] // [46, 48, 50, 52, 54]
+  material: string               // Emulado
+  cuidados: string              // Emulado
 }
 ```
 
 ---
 
-## 🎨 Sistema de Cores
+## 🔧 Configuração e Desenvolvimento
 
-### Paleta Analisada
+### Pré-requisitos
+- Bun 1.3+ (runtime JavaScript)
+- Python 3.10+ (para scripts)
+- Git
 
-Cada imagem foi analisada para extrair:
-- Cor dominante
-- Paleta de 4-5 cores
-- Brilho médio
-- Tom (claro/médio/escuro)
+### Instalação
 
-### Cores Identificadas
+```bash
+# Clone o repositório
+git clone https://github.com/Deivisan/dona-de-mim.git
+cd dona-de-mim
 
-| Cor | Quantidade |
-|-----|------------|
-| Cinza | 26 imagens |
-| Preto | 8 imagens |
-| Marrom | 6 imagens |
-| Rosa | 2 imagens |
-| Bege | 1 imagem |
+# Instale dependências
+bun install
+
+# Gere as páginas estáticas
+bun run scripts/generate-static.ts
+
+# Ou rode o servidor local
+bun run dev
+```
+
+### Gereção de Páginas Estáticas
+
+```bash
+# Regenerar todas as páginas com os dados atuais
+bun run scripts/generate-static.ts
+
+# O script:
+# 1. Lê os produtos em src/data/products.ts
+# 2. Mapeia as imagens reais em assets/imgs/produtos/
+# 3. Gera páginas HTML estáticas
+# 4. Cria páginas de categorias e produtos individuais
+```
 
 ---
 
-## 🔧 Stack Tecnológica
+## 🛤️ Roadmap
 
-### Atual (v1.0 - Draft)
-- HTML5 semântico
-- CSS3 (variables, grid, flexbox)
-- JavaScript vanilla
-- SQLite para banco de dados
-- Python para scripts de análise
+### Fase 1: Protótipo Funcional (Concluído ✅)
+- [x] Landing page responsiva
+- [x] Navegação entre categorias
+- [x] Páginas de produtos
+- [x] Deploy GitHub Pages
+- [x] Design dark/light mode
 
-### Planejado (v2.0)
-- Next.js 15 (App Router)
-- TypeScript
-- Tailwind CSS
-- PostgreSQL ou Supabase
-- Stripe/MercadoPago
+### Fase 2: Melhoria de Dados (Pendente 🔄)
+- [ ] **OCR de Imagens** - Implementar reconhecimento de roupas nas fotos
+  - Detectar tipo (blusa, vestido, short)
+  - Identificar cores e padrões
+  - Extrair características visuais
+- [ ] **Geração de Descrições** - IA para criar descrições únicas
+  - Baseado na análise visual
+  - SEO otimizado
+  - Descrições personalizadas por produto
+- [ ] **Nomes Únicos** - Substituir nomes emulados por nomes reais
+
+### Fase 3: Funcionalidades E-commerce (Pendente)
+- [ ] Carrinho de compras com estado
+- [ ] Finalização de pedido (checkout)
+- [ ] Integração WhatsApp Business API
+- [ ] Cadastro de clientes
+- [ ] Histórico de pedidos
+
+### Fase 4: Produção (Futuro)
+- [ ] Migrar para Next.js
+- [ ] Configurar domínio próprio
+- [ ] Sistema de pagamento
+- [ ] Área administrativa
+- [ ] Panel de gestão de produtos
+- [ ] App mobile (PWA ou nativo)
 
 ---
 
 ## 📱 Contatos
 
-- **Instagram:** https://www.instagram.com/use_donademiim/
-- **WhatsApp:** https://wa.me/557591561769
-- **Domínio:** https://dona-de-mim.com.br (a configurar)
+| Canal | Link |
+|-------|------|
+| **Site** | https://deivisan.github.io/dona-de-mim/ |
+| **Instagram** | https://www.instagram.com/use_donademiim/ |
+| **WhatsApp** | https://wa.me/557591561769 |
+| **GitHub** | https://github.com/Deivisan/dona-de-mim |
 
 ---
 
-## 🚀 Próximos Passos
+## 📝 Licença
 
-### Curto Prazo
-- [ ] Deploy no Vercel/Netlify
-- [ ] Configurar domínio
-- [ ] Implementar carrinho de compras
-- [ ] Sistema de pagamento
-
-### Médio Prazo
-- [ ] Migrar para Next.js
-- [ ] Sistema de login/cadastro
-- [ ] Área do cliente
-- [ ] Painel administrativo
-
-### Longo Prazo
-- [ ] App mobile
-- [ ] Integração com ERP
-- [ ] Sistema de afiliados
-- [ ] Marketplace
+MIT License - feel free to use and modify.
 
 ---
 
-**📅 Gerado em:** 19/02/2026
-**🦞 Por:** DevSan AGI
+**📅 Última Atualização:** 20/02/2026  
+**🦞 Desenvolvido por:** DevSan AGI  
 **💜 Feito com amor para mulheres reais**
+
+---
+
+## 🤖 Para Desenvolvedores
+
+### Variáveis de Ambiente (Futuro)
+
+```env
+# Banco de dados
+DATABASE_URL=postgresql://...
+
+# Pagamentos
+MERCADOPAGO_ACCESS_TOKEN=...
+STRIPE_SECRET_KEY=...
+
+# Imagens
+CLOUDINARY_API_KEY=...
+CLOUDINARY_API_SECRET=...
+
+# WhatsApp
+WHATSAPP_TOKEN=...
+WHATSAPP_PHONE_ID=...
+```
+
+### Comandos Úteis
+
+```bash
+# Atualizar site (deploy manual)
+git add . && git commit -m "update: descricao" && git push
+
+# Regenerar páginas estáticas
+bun run scripts/generate-static.ts
+
+# Verificar status do deploy
+gh run list --repo Deivisan/dona-de-mim
+```
