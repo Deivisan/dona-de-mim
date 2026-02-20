@@ -267,6 +267,7 @@ const generateFooter = () => `
       <p>&copy; 2026 DONA DE MIM. Todos os direitos reservados. Feito com ❤️ para mulheres reais.</p>
     </div>
   </footer>
+  <script src="${BASE_URL}assets/js/app.js"></script>
 </body>
 </html>
 `
