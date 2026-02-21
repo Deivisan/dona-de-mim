@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Tamanhos | Dona De Mim - Moda Plus Size</title>
+  <meta name="description" content="Guia completo de tamanhos Dona de Mim. Aprenda a medir-se e escolha o tamanho ideal do 46 ao 54.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-top">Moda Plus Size • Do 46 ao 54 • ❤️ Mulheres Reais</div>
+    <div class="header-main">
+      <a href="/" class="logo">DONA DE <span>MIM</span></a>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="./categoria/vestidos">Vestidos</a></li>
+          <li><a href="./categoria/blusas">Blusas</a></li>
+          <li><a href="./categoria/shorts">Shorts</a></li>
+          <li><a href="./categoria/conjuntos">Conjuntos</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" aria-label="Alternar Tema"><i class="fas fa-moon"></i></button>
+        <button aria-label="Buscar" id="searchBtn"><i class="fas fa-search"></i></button>
+        <a href="./carrinho.html" class="cart-btn" aria-label="Carrinho">
+          <i class="fas fa-shopping-bag"></i>
+          
+        </a>
+      </div>
+    </div>
+    <div class="search-modal" id="searchModal">
+      <div class="search-content">
+        <form action="/api/busca" method="get">
+          <input type="search" name="q" placeholder="Buscar produtos..." id="searchInput">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="static-page">
+    <div class="static-header">
+      <h1>Guia de Tamanhos</h1>
+      <p>Encontre o tamanho perfeito para você</p>
+    </div>
+
+    <div class="static-content">
+      <section class="size-intro">
+        <h2>Como Medir Corretamente</h2>
+        <p>Para garantir que você escolha o tamanho ideal, siga estas dicas simples:</p>
+        <div class="measuring-tips">
+          <div class="tip-card">
+            <i class="fas fa-ruler-horizontal"></i>
+            <h4>Use uma fita métrica</h4>
+            <p>Utilize uma fita métrica flexível e mantenha-a paralela ao chão, sem apertar demais.</p>
+          </div>
+          <div class="tip-card">
+            <i class="fas fa-user"></i>
+            <h4>Peça ajuda</h4>
+            <p>Se possível, peça para alguém te ajudar a medir. Isso garante mais precisão.</p>
+          </div>
+          <div class="tip-card">
+            <i class="fas fa-tshirt"></i>
+            <h4>Roupas leves</h4>
+            <p>Meça-se sobre roupas leves ou diretamente sobre o corpo para maior precisão.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="size-table-section">
+        <h2>Tabela de Medidas</h2>
+        <p class="table-description">Todas as medidas estão em centímetros (cm)</p>
+        
+        <div class="size-table-wrapper">
+          <table class="size-table">
+            <thead>
+              <tr>
+                <th>Tamanho</th>
+                <th>Busto</th>
+                <th>Cintura</th>
+                <th>Quadril</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="size-label"><strong>46</strong></td>
+                <td>106 - 110 cm</td>
+                <td>88 - 92 cm</td>
+                <td>114 - 118 cm</td>
+              </tr>
+              <tr>
+                <td class="size-label"><strong>48</strong></td>
+                <td>112 - 116 cm</td>
+                <td>94 - 98 cm</td>
+                <td>120 - 124 cm</td>
+              </tr>
+              <tr>
+                <td class="size-label"><strong>50</strong></td>
+                <td>118 - 122 cm</td>
+                <td>100 - 104 cm</td>
+                <td>126 - 130 cm</td>
+              </tr>
+              <tr>
+                <td class="size-label"><strong>52</strong></td>
+                <td>124 - 128 cm</td>
+                <td>106 - 110 cm</td>
+                <td>132 - 136 cm</td>
+              </tr>
+              <tr>
+                <td class="size-label"><strong>54</strong></td>
+                <td>130 - 134 cm</td>
+                <td>112 - 116 cm</td>
+                <td>138 - 142 cm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="how-to-measure">
+        <h2>Onde Medir</h2>
+        <div class="measure-guide">
+          <div class="measure-item">
+            <i class="fas fa-circle"></i>
+            <div>
+              <h4>Busto</h4>
+              <p>Passe a fita métrica ao redor da parte mais cheia do busto, mantendo-a paralela ao chão.</p>
+            </div>
+          </div>
+          <div class="measure-item">
+            <i class="fas fa-circle"></i>
+            <div>
+              <h4>Cintura</h4>
+              <p>Meça na parte mais fina da cintura, geralmente logo acima do umbigo.</p>
+            </div>
+          </div>
+          <div class="measure-item">
+            <i class="fas fa-circle"></i>
+            <div>
+              <h4>Quadril</h4>
+              <p>Passe a fita na parte mais larga do quadril/glúteos, mantendo-a paralela ao chão.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="size-faq">
+        <h2>Dúvidas Frequentes</h2>
+        <div class="faq-item">
+          <h4><i class="fas fa-question-circle"></i> E se minhas medidas estiverem entre dois tamanhos?</h4>
+          <p>Recomendamos escolher o tamanho maior para maior conforto, ou considerar o tipo de modelagem que você prefere (mais justa ou mais solta).</p>
+        </div>
+        <div class="faq-item">
+          <h4><i class="fas fa-question-circle"></i> As peças seguem o padrão da tabela?</h4>
+          <p>Sim! Todas as nossas peças são desenvolvidas seguindo essa tabela de medidas. No entanto, cada modelo pode ter uma modelagem específica (mais justa ou mais ampla).</p>
+        </div>
+        <div class="faq-item">
+          <h4><i class="fas fa-question-circle"></i> Como saber se o tamanho vai servir?</h4>
+          <p>Compare suas medidas com a tabela e escolha o tamanho correspondente. Se tiver dúvidas, nossa equipe no WhatsApp pode te ajudar! (75) 9156-1769</p>
+        </div>
+      </section>
+
+      <section class="cta-sizes">
+        <h2>Ainda com Dúvidas?</h2>
+        <p>Nossa equipe está pronta para te ajudar a encontrar o tamanho perfeito!</p>
+        <a href="https://wa.me/557591561769" target="_blank" class="btn btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Falar com Consultora
+        </a>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="/" class="logo">DONA DE <span>MIM</span></a>
+        <p>Moda plus size feita para mulheres reais. Realçando as curvas de quem é Dona de si.<br><br><strong>A DONA</strong> - 75 9156-1769</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/use_donademiim/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/557591561769" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h5>Institucional</h5>
+        <ul>
+          <li><a href="/sobre-nos">Sobre Nós</a></li>
+          <li><a href="/guia-de-tamanhos">Guia de Tamanhos</a></li>
+          <li><a href="/politicas">Políticas</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h5>Ajuda</h5>
+        <ul>
+          <li><a href="/politicas#frete">Frete e Entrega</a></li>
+          <li><a href="/politicas#trocas">Trocas e Devoluções</a></li>
+          <li><a href="/guia-de-tamanhos">Como Medir</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="https://wa.me/557591561769"><i class="fab fa-whatsapp"></i> 75 9156-1769</a></li>
+          <li><a href="https://www.instagram.com/use_donademiim/" target="_blank"><i class="fab fa-instagram"></i> @use_donademiim</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 DONA DE MIM. Todos os direitos reservados. Feito com ❤️ para mulheres reais.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/557591561769" target="_blank" class="floating-whatsapp" aria-label="Fale conosco no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

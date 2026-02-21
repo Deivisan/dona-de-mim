@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dona De Mim | Plus Size - Moda Para Mulheres Reais</title>
+  <meta name="description" content="Dona De Mim - Moda plus size Do 46 ao 54. Realçando as curvas de quem é dona de si.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-top">Moda Plus Size • Do 46 ao 54 • ❤️ Mulheres Reais</div>
+    <div class="header-main">
+      <a href="/" class="logo">DONA DE <span>MIM</span></a>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="./categoria/shorts">Shorts</a></li>
+          <li><a href="./categoria/conjuntos">Conjuntos</a></li>
+          <li><a href="./categoria/macacoes">Macacões</a></li>
+          <li><a href="./categoria/bodys">Bodys</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="themeSettings" class="settings-btn" aria-label="Configurações de Tema"><i class="fas fa-cog"></i></button>
+        <button id="themeToggle" aria-label="Alternar Tema"><i class="fas fa-moon"></i></button>
+        <button aria-label="Buscar" id="searchBtn"><i class="fas fa-search"></i></button>
+        <a href="./carrinho.html" class="cart-btn" aria-label="Carrinho">
+          <i class="fas fa-shopping-bag"></i>
+          
+        </a>
+      </div>
+    </div>
+    <div class="theme-selector" id="themeSelector">
+      <h4>Temas</h4>
+      <div class="theme-options">
+        <div class="theme-option" data-theme="light">Claro</div>
+        <div class="theme-option" data-theme="soft-dark">Soft Dark</div>
+        <div class="theme-option" data-theme="dark">Dark</div>
+        <div class="theme-option" data-theme="ocean">Ocean</div>
+        <div class="theme-option" data-theme="rose">Rose</div>
+        <div class="theme-option" data-theme="forest">Forest</div>
+        <div class="theme-option" data-theme="sunset">Sunset</div>
+      </div>
+    </div>
+    <div class="search-modal" id="searchModal">
+      <div class="search-content">
+        <form action="/api/busca" method="get">
+          <input type="search" name="q" placeholder="Buscar produtos..." id="searchInput">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+    </div>
+  </header>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-subtitle">Nova Coleção</p>
+      <h1>Realçando As Curvas <span>De Quem É</span> dona De Si</h1>
+      <p class="hero-tagline">Moda Para Mulheres Reais ❤️</p>
+      <span class="hero-sizes">Do 46 ao 54</span>
+      <br><br>
+      <a href="#colecoes" class="btn">Explorar Agora</a>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-content">
+      <h2>Bem-vinda à <span>Dona De Mim</span></h2>
+      <p>Somos uma marca feita por e para mulheres reais. Acreditamos que a moda deve se adaptar ao seu corpo, e não o contrário. Nossa curadoria exclusiva foca em peças que trazem <strong>conforto, estilo e empoderamento</strong>. Do 46 ao 54, aqui você é a dona da sua história. ❤️</p>
+    </div>
+  </section>
+
+  <section class="categories" id="colecoes">
+    <h2 class="section-title">Nossas Categorias</h2>
+    <div class="categories-grid">
+      <a href="./categoria/shorts" class="category-card">
+        <img src="/imgs/produtos/shorts/DDM-0001-short-plus-size-estrelas.jpeg" alt="Shorts">
+        <div class="category-overlay">
+          <div class="category-info">
+            <h3>Shorts</h3>
+            <span>Ver Coleção</span>
+          </div>
+        </div>
+      </a>
+      <a href="./categoria/conjuntos" class="category-card">
+        <img src="/imgs/produtos/conjuntos/DDM-0007-conjunto-plus-size-top-rosa-short-verde.jpeg" alt="Conjuntos">
+        <div class="category-overlay">
+          <div class="category-info">
+            <h3>Conjuntos</h3>
+            <span>Ver Coleção</span>
+          </div>
+        </div>
+      </a>
+      <a href="./categoria/macacoes" class="category-card">
+        <img src="/imgs/produtos/macacoes/DDM-0012-macaquinho-plus-size-fucsia-botoes.jpeg" alt="Macacões">
+        <div class="category-overlay">
+          <div class="category-info">
+            <h3>Macacões</h3>
+            <span>Ver Coleção</span>
+          </div>
+        </div>
+      </a>
+      <a href="./categoria/bodys" class="category-card">
+        <img src="/imgs/produtos/bodys/DDM-0029-body-plus-size-um-ombro-fucsia.jpeg" alt="Bodys">
+        <div class="category-overlay">
+          <div class="category-info">
+            <h3>Bodys</h3>
+            <span>Ver Coleção</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="products" id="highlights">
+    <h2 class="section-title">Destaques da Semana</h2>
+    <div class="products-grid">
+      
+    <a href="./produto/short-plus-size-jeans-estrelas-1" class="product-card">
+      <div class="product-image">
+        <span class="product-tag tag-new">Lançamento</span>
+        <img src="/imgs/produtos/shorts/DDM-0001-short-plus-size-estrelas.jpeg" alt="Short Plus Size Jeans Estrelas" loading="lazy" />
+        <div class="product-overlay">
+          <button class="quick-view-btn" data-product-id="1" data-product-slug="short-plus-size-jeans-estrelas-1">
+            <i class="fas fa-eye"></i> Ver Detalhes
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <span class="product-category">shorts</span>
+        <h4>Short Plus Size Jeans Estrelas</h4>
+        <div class="product-prices"><span class="price-current">R$ 129.90</span></div>
+        <div class="product-sizes-mini">
+          <span>46</span><span>48</span><span>50</span><span>52</span><span>54</span>
+        </div>
+      </div>
+    </a>
+  
+    <a href="./produto/short-plus-size-jeans-renda-2" class="product-card">
+      <div class="product-image">
+        <span class="product-tag tag-new">Lançamento</span>
+        <img src="/imgs/produtos/shorts/DDM-0002-short-plus-size-aplique-renda.jpeg" alt="Short Plus Size Jeans com Renda" loading="lazy" />
+        <div class="product-overlay">
+          <button class="quick-view-btn" data-product-id="2" data-product-slug="short-plus-size-jeans-renda-2">
+            <i class="fas fa-eye"></i> Ver Detalhes
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <span class="product-category">shorts</span>
+        <h4>Short Plus Size Jeans com Renda</h4>
+        <div class="product-prices"><span class="price-current">R$ 139.90</span></div>
+        <div class="product-sizes-mini">
+          <span>46</span><span>48</span><span>50</span><span>52</span><span>54</span>
+        </div>
+      </div>
+    </a>
+  
+    <a href="./produto/short-plus-size-jeans-croche-3" class="product-card">
+      <div class="product-image">
+        <span class="product-tag tag-new">Lançamento</span>
+        <img src="/imgs/produtos/shorts/DDM-0003-short-plus-size-detalhe-croche-colorido.jpeg" alt="Short Plus Size Jeans com Crochê Colorido" loading="lazy" />
+        <div class="product-overlay">
+          <button class="quick-view-btn" data-product-id="3" data-product-slug="short-plus-size-jeans-croche-3">
+            <i class="fas fa-eye"></i> Ver Detalhes
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <span class="product-category">shorts</span>
+        <h4>Short Plus Size Jeans com Crochê Colorido</h4>
+        <div class="product-prices"><span class="price-current">R$ 144.90</span></div>
+        <div class="product-sizes-mini">
+          <span>46</span><span>48</span><span>50</span><span>52</span><span>54</span>
+        </div>
+      </div>
+    </a>
+  
+    <a href="./produto/short-plus-size-jeans-rosa-4" class="product-card">
+      <div class="product-image">
+        <span class="product-tag tag-featured">Destaque</span>
+        <img src="/imgs/produtos/shorts/DDM-0004-short-plus-size-aplique-rosa-branca.jpeg" alt="Short Plus Size Jeans com Rosa Branca" loading="lazy" />
+        <div class="product-overlay">
+          <button class="quick-view-btn" data-product-id="4" data-product-slug="short-plus-size-jeans-rosa-4">
+            <i class="fas fa-eye"></i> Ver Detalhes
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <span class="product-category">shorts</span>
+        <h4>Short Plus Size Jeans com Rosa Branca</h4>
+        <div class="product-prices"><span class="price-current">R$ 134.90</span></div>
+        <div class="product-sizes-mini">
+          <span>46</span><span>48</span><span>50</span><span>52</span><span>54</span>
+        </div>
+      </div>
+    </a>
+  
+    <a href="./produto/short-plus-size-jeans-strass-6" class="product-card">
+      <div class="product-image">
+        <span class="product-tag tag-featured">Destaque</span>
+        <img src="/imgs/produtos/shorts/DDM-0006-short-plus-size-strass.jpeg" alt="Short Plus Size Jeans com Strass" loading="lazy" />
+        <div class="product-overlay">
+          <button class="quick-view-btn" data-product-id="6" data-product-slug="short-plus-size-jeans-strass-6">
+            <i class="fas fa-eye"></i> Ver Detalhes
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <span class="product-category">shorts</span>
+        <h4>Short Plus Size Jeans com Strass</h4>
+        <div class="product-prices"><span class="price-current">R$ 149.90</span></div>
+        <div class="product-sizes-mini">
+          <span>46</span><span>48</span><span>50</span><span>52</span><span>54</span>
+        </div>
+      </div>
+    </a>
+  
+    <a href="./produto/conjunto-plus-size-top-rosa-short-verde-7" class="product-card">
+      <div class="product-image">
+        <span class="product-tag tag-new">Lançamento</span>
+        <img src="/imgs/produtos/conjuntos/DDM-0007-conjunto-plus-size-top-rosa-short-verde.jpeg" alt="Conjunto Plus Size Top Rosa e Short Verde" loading="lazy" />
+        <div class="product-overlay">
+          <button class="quick-view-btn" data-product-id="7" data-product-slug="conjunto-plus-size-top-rosa-short-verde-7">
+            <i class="fas fa-eye"></i> Ver Detalhes
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <span class="product-category">conjuntos</span>
+        <h4>Conjunto Plus Size Top Rosa e Short Verde</h4>
+        <div class="product-prices"><span class="price-current">R$ 189.90</span></div>
+        <div class="product-sizes-mini">
+          <span>46</span><span>48</span><span>50</span><span>52</span><span>54</span>
+        </div>
+      </div>
+    </a>
+  
+    <a href="./produto/conjunto-plus-size-festone-vermelho-8" class="product-card">
+      <div class="product-image">
+        <span class="product-tag tag-new">Lançamento</span>
+        <img src="/imgs/produtos/conjuntos/DDM-0008-conjunto-plus-size-festone-vermelho.jpeg" alt="Conjunto Plus Size Festonê Vermelho" loading="lazy" />
+        <div class="product-overlay">
+          <button class="quick-view-btn" data-product-id="8" data-product-slug="conjunto-plus-size-festone-vermelho-8">
+            <i class="fas fa-eye"></i> Ver Detalhes
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <span class="product-category">conjuntos</span>
+        <h4>Conjunto Plus Size Festonê Vermelho</h4>
+        <div class="product-prices"><span class="price-current">R$ 199.90</span></div>
+        <div class="product-sizes-mini">
+          <span>46</span><span>48</span><span>50</span><span>52</span><span>54</span>
+        </div>
+      </div>
+    </a>
+  
+    <a href="./produto/conjunto-plus-size-um-ombro-verde-lima-9" class="product-card">
+      <div class="product-image">
+        <span class="product-tag tag-new">Lançamento</span>
+        <img src="/imgs/produtos/conjuntos/DDM-0009-conjunto-plus-size-um-ombro-verde-lima.jpeg" alt="Conjunto Plus Size Um Ombro Verde Lima" loading="lazy" />
+        <div class="product-overlay">
+          <button class="quick-view-btn" data-product-id="9" data-product-slug="conjunto-plus-size-um-ombro-verde-lima-9">
+            <i class="fas fa-eye"></i> Ver Detalhes
+          </button>
+        </div>
+      </div>
+      <div class="product-info">
+        <span class="product-category">conjuntos</span>
+        <h4>Conjunto Plus Size Um Ombro Verde Lima</h4>
+        <div class="product-prices"><span class="price-current">R$ 209.90</span></div>
+        <div class="product-sizes-mini">
+          <span>46</span><span>48</span><span>50</span><span>52</span><span>54</span>
+        </div>
+      </div>
+    </a>
+  
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature-item">
+      <i class="fas fa-truck"></i>
+      <h4>Frete Inteligente</h4>
+      <p>Envio rápido para todo o Brasil. Frete grátis em compras acima de R$ 299.</p>
+    </div>
+    <div class="feature-item">
+      <i class="fas fa-sync-alt"></i>
+      <h4>Troca Descomplicada</h4>
+      <p>Sua primeira troca é por nossa conta em até 30 dias.</p>
+    </div>
+    <div class="feature-item">
+      <i class="fas fa-shield-alt"></i>
+      <h4>Compra 100% Segura</h4>
+      <p>Seus dados estão protegidos com criptografia de ponta a ponta.</p>
+    </div>
+    <div class="feature-item">
+      <i class="fab fa-whatsapp"></i>
+      <h4>Atendimento VIP</h4>
+      <p>Dúvidas sobre tamanhos? Fale com nossas consultoras no WhatsApp.</p>
+    </div>
+  </section>
+
+  <section class="instagram-section" id="contato">
+    <div class="instagram-content">
+      <h2 class="section-title">Siga-nos no Instagram</h2>
+      <p class="instagram-subtitle">Junte-se à nossa comunidade e inspire-se com mulheres reais que são Dona de Mim</p>
+      <a href="https://www.instagram.com/use_donademiim/" target="_blank" class="btn btn-instagram">
+        <i class="fab fa-instagram"></i> @use_donademiim
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="/" class="logo">DONA DE <span>MIM</span></a>
+        <p>Moda plus size feita para mulheres reais. Realçando as curvas de quem é Dona de si.<br><br><strong>A DONA</strong> - 75 9156-1769</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/use_donademiim/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/557591561769" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h5>Institucional</h5>
+        <ul><li><a href="#">Sobre Nós</a></li><li><a href="#">Nossas Lojas</a></li><li><a href="#">Trabalhe Conosco</a></li></ul>
+      </div>
+      <div class="footer-column">
+        <h5>Ajuda</h5>
+        <ul><li><a href="#">Central de Ajuda</a></li><li><a href="#">Frete e Entrega</a></li><li><a href="#">Trocas e Devoluções</a></li></ul>
+      </div>
+      <div class="footer-column">
+        <h5>Contato</h5>
+        <ul><li><a href="https://wa.me/557591561769"><i class="fab fa-whatsapp"></i> 75 9156-1769</a></li><li><a href="https://www.instagram.com/use_donademiim/" target="_blank"><i class="fab fa-instagram"></i> @use_donademiim</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 DONA DE MIM. Todos os direitos reservados. Feito com ❤️ para mulheres reais.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/557591561769" target="_blank" class="floating-whatsapp" aria-label="Fale conosco no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

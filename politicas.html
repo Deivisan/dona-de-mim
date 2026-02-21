@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Políticas | Dona De Mim - Frete, Trocas e Devoluções</title>
+  <meta name="description" content="Políticas de frete, trocas e devoluções da Dona de Mim. Frete grátis acima de R$ 299 e primeira troca grátis em até 30 dias.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-top">Moda Plus Size • Do 46 ao 54 • ❤️ Mulheres Reais</div>
+    <div class="header-main">
+      <a href="/" class="logo">DONA DE <span>MIM</span></a>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="./categoria/vestidos">Vestidos</a></li>
+          <li><a href="./categoria/blusas">Blusas</a></li>
+          <li><a href="./categoria/shorts">Shorts</a></li>
+          <li><a href="./categoria/conjuntos">Conjuntos</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" aria-label="Alternar Tema"><i class="fas fa-moon"></i></button>
+        <button aria-label="Buscar" id="searchBtn"><i class="fas fa-search"></i></button>
+        <a href="./carrinho.html" class="cart-btn" aria-label="Carrinho">
+          <i class="fas fa-shopping-bag"></i>
+          
+        </a>
+      </div>
+    </div>
+    <div class="search-modal" id="searchModal">
+      <div class="search-content">
+        <form action="/api/busca" method="get">
+          <input type="search" name="q" placeholder="Buscar produtos..." id="searchInput">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="static-page">
+    <div class="static-header">
+      <h1>Políticas</h1>
+      <p>Frete, trocas e devoluções</p>
+    </div>
+
+    <div class="static-content">
+      <section class="policy-section">
+        <h2><i class="fas fa-truck"></i> Política de Frete</h2>
+        <div class="policy-content">
+          <p>Trabalhamos com as principais transportadoras do Brasil para garantir que seu pedido chegue rápido e seguro até você.</p>
+          
+          <div class="shipping-info">
+            <div class="shipping-card highlight">
+              <i class="fas fa-gift"></i>
+              <h3>Frete Grátis</h3>
+              <p><strong>Compras acima de R$ 299</strong> têm frete grátis para todo o Brasil. Aproveite para garantir várias peças e economizar!</p>
+            </div>
+            
+            <div class="shipping-card">
+              <i class="fas fa-shipping-fast"></i>
+              <h3>Prazos de Entrega</h3>
+              <ul>
+                <li><strong>Nordeste:</strong> 3 a 7 dias úteis</li>
+                <li><strong>Sudeste:</strong> 5 a 10 dias úteis</li>
+                <li><strong>Sul:</strong> 7 a 12 dias úteis</li>
+                <li><strong>Norte/Centro-Oeste:</strong> 7 a 15 dias úteis</li>
+              </ul>
+            </div>
+            
+            <div class="shipping-card">
+              <i class="fas fa-box"></i>
+              <h3>Processamento</h3>
+              <p>Seu pedido é preparado e despachado em até <strong>2 dias úteis</strong> após a confirmação do pagamento.</p>
+            </div>
+          </div>
+          
+          <p class="policy-note"><i class="fas fa-info-circle"></i> O prazo de entrega começa a contar a partir da data de postagem do pedido.</p>
+        </div>
+      </section>
+
+      <section class="policy-section">
+        <h2><i class="fas fa-sync-alt"></i> Política de Trocas</h2>
+        <div class="policy-content">
+          <p class="intro">Sua satisfação é nossa prioridade! Se a peça não serviu ou não ficou como esperava, fazemos a troca sem custo adicional.</p>
+          
+          <div class="exchange-rules">
+            <h3>Primeira Troca Grátis</h3>
+            <ul class="rules-list">
+              <li><i class="fas fa-check"></i> <strong>Prazo:</strong> Até 30 dias corridos após o recebimento do produto</li>
+              <li><i class="fas fa-check"></i> <strong>Condição:</strong> Peça sem uso, sem marcas de uso e com todas as etiquetas</li>
+              <li><i class="fas fa-check"></i> <strong>Embalagem:</strong> Na embalagem original, se possível</li>
+              <li><i class="fas fa-check"></i> <strong>Primeira troca:</strong> Totalmente por nossa conta</li>
+              <li><i class="fas fa-check"></i> <strong>Trocas adicionais:</strong> Cliente paga o frete de envio</li>
+            </ul>
+          </div>
+          
+          <div class="how-to-exchange">
+            <h3>Como Solicitar a Troca</h3>
+            <ol>
+              <li>Entre em contato pelo WhatsApp <strong>(75) 9156-1769</strong> ou e-mail</li>
+              <li>Informe o número do pedido e o motivo da troca</li>
+              <li>Receba as instruções de envio e o código de postagem</li>
+              <li>Envie a peça de volta em até 7 dias úteis</li>
+              <li>Após recebermos, enviamos a nova peça ou fazemos o reembolso</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="policy-section">
+        <h2><i class="fas fa-undo"></i> Política de Devoluções</h2>
+        <div class="policy-content">
+          <p>Você tem o direito de se arrepender da compra em até <strong>7 dias corridos</strong> após o recebimento do produto, conforme o Código de Defesa do Consumidor (Art. 49).</p>
+          
+          <div class="refund-info">
+            <div class="refund-item">
+              <h4>Como Devolver</h4>
+              <p>Entre em contato conosco pelo WhatsApp ou e-mail informando sua intenção de devolução. Enviaremos todas as instruções.</p>
+            </div>
+            <div class="refund-item">
+              <h4>Reembolso</h4>
+              <p>O valor será devolvido integralmente, incluindo o frete, em até 10 dias úteis após recebermos o produto.</p>
+            </div>
+            <div class="refund-item">
+              <h4>Condições</h4>
+              <p>O produto deve estar sem uso, em sua embalagem original e com todas as etiquetas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="policy-section">
+        <h2><i class="fas fa-shield-alt"></i> Garantia de Qualidade</h2>
+        <div class="policy-content">
+          <p>Todos os nossos produtos têm garantia de qualidade. Se você receber uma peça com defeito de fabricação, entre em contato imediatamente que resolveremos o problema.</p>
+          
+          <div class="quality-promise">
+            <div class="promise-item">
+              <i class="fas fa-medal"></i>
+              <div>
+                <h4>Defeito de Fabricação</h4>
+                <p>Cobrimos qualquer defeito de fabricação em até 90 dias. Troca imediata sem custo.</p>
+              </div>
+            </div>
+            <div class="promise-item">
+              <i class="fas fa-hand-holding-heart"></i>
+              <div>
+                <h4>Satisfação Garantida</h4>
+                <p>Se não estiver satisfeita, devolvemos seu dinheiro. Sua felicidade é nossa prioridade.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-policies">
+        <h2>Precisa de Ajuda?</h2>
+        <p>Nossa equipe está pronta para esclarecer qualquer dúvida sobre nossas políticas.</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/557591561769" target="_blank" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+          </a>
+          <a href="/" class="btn btn-outline">
+            <i class="fas fa-store"></i> Voltar às Compras
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="/" class="logo">DONA DE <span>MIM</span></a>
+        <p>Moda plus size feita para mulheres reais. Realçando as curvas de quem é Dona de si.<br><br><strong>A DONA</strong> - 75 9156-1769</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/use_donademiim/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/557591561769" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h5>Institucional</h5>
+        <ul>
+          <li><a href="/sobre-nos">Sobre Nós</a></li>
+          <li><a href="/guia-de-tamanhos">Guia de Tamanhos</a></li>
+          <li><a href="/politicas">Políticas</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h5>Ajuda</h5>
+        <ul>
+          <li><a href="/politicas#frete">Frete e Entrega</a></li>
+          <li><a href="/politicas#trocas">Trocas e Devoluções</a></li>
+          <li><a href="/guia-de-tamanhos">Como Medir</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="https://wa.me/557591561769"><i class="fab fa-whatsapp"></i> 75 9156-1769</a></li>
+          <li><a href="https://www.instagram.com/use_donademiim/" target="_blank"><i class="fab fa-instagram"></i> @use_donademiim</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 DONA DE MIM. Todos os direitos reservados. Feito com ❤️ para mulheres reais.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/557591561769" target="_blank" class="floating-whatsapp" aria-label="Fale conosco no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>
