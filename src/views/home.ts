@@ -6,7 +6,7 @@ import { type Product, products } from '../data/products'
 import { getProductImagePath } from '../utils/helpers'
 
 function getImagePath(product: Product): string {
-  return getProductImagePath(product.sku, product.categoria)
+  return getProductImagePath(product.sku, product.categoria, product.imagem_principal.arquivo_novo)
 }
 
 function renderProductCard(product: Product): string {
@@ -50,10 +50,10 @@ function renderProductCard(product: Product): string {
 export function HomePage(cartCount: number = 0): string {
   const highlights = products.filter((p: Product) => p.destaque && p.ativo).slice(0, 8)
   const newArrivals = products.filter((p: Product) => p.lancamento && p.ativo).slice(0, 4)
-  const blusas = products.filter((p: Product) => p.categoria === 'blusas' && p.ativo).slice(0, 4)
-  const vestidos = products.filter((p: Product) => p.categoria === 'vestidos' && p.ativo).slice(0, 4)
   const shorts = products.filter((p: Product) => p.categoria === 'shorts' && p.ativo).slice(0, 1)
   const conjuntos = products.filter((p: Product) => p.categoria === 'conjuntos' && p.ativo).slice(0, 1)
+  const macacoes = products.filter((p: Product) => p.categoria === 'macacoes' && p.ativo).slice(0, 1)
+  const bodys = products.filter((p: Product) => p.categoria === 'bodys' && p.ativo).slice(0, 1)
 
   return `<!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
@@ -92,24 +92,6 @@ export function HomePage(cartCount: number = 0): string {
   <section class="categories" id="colecoes">
     <h2 class="section-title">Nossas Categorias</h2>
     <div class="categories-grid">
-      <a href="/categoria/vestidos" class="category-card">
-        <img src="${vestidos.length > 0 ? getImagePath(vestidos[0]) : '/assets/imgs/placeholder.jpg'}" alt="Vestidos">
-        <div class="category-overlay">
-          <div class="category-info">
-            <h3>Vestidos</h3>
-            <span>Ver Coleção</span>
-          </div>
-        </div>
-      </a>
-      <a href="/categoria/blusas" class="category-card">
-        <img src="${blusas.length > 0 ? getImagePath(blusas[0]) : '/assets/imgs/placeholder.jpg'}" alt="Blusas">
-        <div class="category-overlay">
-          <div class="category-info">
-            <h3>Blusas</h3>
-            <span>Ver Coleção</span>
-          </div>
-        </div>
-      </a>
       <a href="/categoria/shorts" class="category-card">
         <img src="${shorts.length > 0 ? getImagePath(shorts[0]) : '/assets/imgs/placeholder.jpg'}" alt="Shorts">
         <div class="category-overlay">
@@ -124,6 +106,24 @@ export function HomePage(cartCount: number = 0): string {
         <div class="category-overlay">
           <div class="category-info">
             <h3>Conjuntos</h3>
+            <span>Ver Coleção</span>
+          </div>
+        </div>
+      </a>
+      <a href="/categoria/macacoes" class="category-card">
+        <img src="${macacoes.length > 0 ? getImagePath(macacoes[0]) : '/assets/imgs/placeholder.jpg'}" alt="Macacões">
+        <div class="category-overlay">
+          <div class="category-info">
+            <h3>Macacões</h3>
+            <span>Ver Coleção</span>
+          </div>
+        </div>
+      </a>
+      <a href="/categoria/bodys" class="category-card">
+        <img src="${bodys.length > 0 ? getImagePath(bodys[0]) : '/assets/imgs/placeholder.jpg'}" alt="Bodys">
+        <div class="category-overlay">
+          <div class="category-info">
+            <h3>Bodys</h3>
             <span>Ver Coleção</span>
           </div>
         </div>
@@ -190,19 +190,32 @@ function renderHeader(cartCount: number): string {
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/categoria/vestidos">Vestidos</a></li>
-          <li><a href="/categoria/blusas">Blusas</a></li>
           <li><a href="/categoria/shorts">Shorts</a></li>
           <li><a href="/categoria/conjuntos">Conjuntos</a></li>
+          <li><a href="/categoria/macacoes">Macacões</a></li>
+          <li><a href="/categoria/bodys">Bodys</a></li>
         </ul>
       </nav>
       <div class="header-actions">
+        <button id="themeSettings" class="settings-btn" aria-label="Configurações de Tema"><i class="fas fa-cog"></i></button>
         <button id="themeToggle" aria-label="Alternar Tema"><i class="fas fa-moon"></i></button>
         <button aria-label="Buscar" id="searchBtn"><i class="fas fa-search"></i></button>
         <a href="/carrinho" class="cart-btn" aria-label="Carrinho">
           <i class="fas fa-shopping-bag"></i>
           ${cartCount > 0 ? `<span class="cart-count">${cartCount}</span>` : ''}
         </a>
+      </div>
+    </div>
+    <div class="theme-selector" id="themeSelector">
+      <h4>Temas</h4>
+      <div class="theme-options">
+        <div class="theme-option" data-theme="light">Claro</div>
+        <div class="theme-option" data-theme="soft-dark">Soft Dark</div>
+        <div class="theme-option" data-theme="dark">Dark</div>
+        <div class="theme-option" data-theme="ocean">Ocean</div>
+        <div class="theme-option" data-theme="rose">Rose</div>
+        <div class="theme-option" data-theme="forest">Forest</div>
+        <div class="theme-option" data-theme="sunset">Sunset</div>
       </div>
     </div>
     <div class="search-modal" id="searchModal">

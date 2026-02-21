@@ -61,12 +61,13 @@ db.run(`
 function getCart(sessionId: string) {
   return db
     .query(`
-    SELECT c.*, p.nome, p.preco_venda, p.categoria, p.imagem_principal
+    SELECT c.*, p.nome, p.preco_venda, p.categoria_id, pi.arquivo as imagem_arquivo
     FROM cart c
-    JOIN json_each(?) AS products ON json_extract(products.value, '$.id') = c.product_id
+    JOIN produtos p ON p.id = c.product_id
+    LEFT JOIN produto_imagens pi ON pi.produto_id = p.id AND pi.principal = 1
     WHERE c.session_id = ?
   `)
-    .all(JSON.stringify(products), sessionId)
+    .all(sessionId)
 }
 
 function addToCart(sessionId: string, productId: number, tamanho: number, quantity: number = 1) {
@@ -179,6 +180,15 @@ const app = new Elysia()
     }
     return new Response('NOT_FOUND', { status: 404 })
   })
+  .get('/imgs/produtos/:category/:file', ({ params }) => {
+    const filePath = `./public/imgs/${params.category}/${params.file}`
+    if (existsSync(filePath)) {
+      return new Response(readFileSync(filePath), {
+        headers: { 'Content-Type': 'image/jpeg' },
+      })
+    }
+    return new Response('NOT_FOUND', { status: 404 })
+  })
 
   // Middleware para session
   .derive(({ request }) => {
@@ -217,7 +227,38 @@ const app = new Elysia()
     })
   })
 
-  // Categoria
+  // ==========================================
+  // PÁGINAS INSTITUCIONAIS (ANTES DE /categoria/:categoria)
+  // ==========================================
+
+  // Sobre Nós
+  .get('/sobre-nos', ({ sessionId }) => {
+    const cartCount = getCartCount(sessionId)
+    const html = SobreNosPage(cartCount)
+    return new Response(html, {
+      headers: { 'Content-Type': 'text/html; charset=utf-8' },
+    })
+  })
+
+  // Guia de Tamanhos
+  .get('/guia-de-tamanhos', ({ sessionId }) => {
+    const cartCount = getCartCount(sessionId)
+    const html = GuiaTamanhosPage(cartCount)
+    return new Response(html, {
+      headers: { 'Content-Type': 'text/html; charset=utf-8' },
+    })
+  })
+
+  // Políticas
+  .get('/politicas', ({ sessionId }) => {
+    const cartCount = getCartCount(sessionId)
+    const html = PoliticasPage(cartCount)
+    return new Response(html, {
+      headers: { 'Content-Type': 'text/html; charset=utf-8' },
+    })
+  })
+
+  // Categoria (DEPOIS das rotas específicas)
   .get('/categoria/:categoria', ({ params, sessionId }) => {
     const cartCount = getCartCount(sessionId)
 
@@ -243,37 +284,6 @@ const app = new Elysia()
     })
 
     const html = CartPage(enrichedItems, total, cartCount)
-    return new Response(html, {
-      headers: { 'Content-Type': 'text/html; charset=utf-8' },
-    })
-  })
-
-  // ==========================================
-  // PÁGINAS INSTITUCIONAIS
-  // ==========================================
-
-  // Sobre Nós
-  .get('/sobre-nos', ({ sessionId }) => {
-    const cartCount = getCartCount(sessionId)
-    const html = SobreNosPage(cartCount)
-    return new Response(html, {
-      headers: { 'Content-Type': 'text/html; charset=utf-8' },
-    })
-  })
-
-  // Guia de Tamanhos
-  .get('/guia-de-tamanhos', ({ sessionId }) => {
-    const cartCount = getCartCount(sessionId)
-    const html = GuiaTamanhosPage(cartCount)
-    return new Response(html, {
-      headers: { 'Content-Type': 'text/html; charset=utf-8' },
-    })
-  })
-
-  // Políticas
-  .get('/politicas', ({ sessionId }) => {
-    const cartCount = getCartCount(sessionId)
-    const html = PoliticasPage(cartCount)
     return new Response(html, {
       headers: { 'Content-Type': 'text/html; charset=utf-8' },
     })

@@ -9,35 +9,72 @@
 
 function initTheme() {
   const themeToggle = document.getElementById('themeToggle');
+  const themeSettings = document.getElementById('themeSettings');
+  const themeSelector = document.getElementById('themeSelector');
   const html = document.documentElement;
   const icon = themeToggle?.querySelector('i');
-  
+
   // Load saved theme
   const savedTheme = localStorage.getItem('dona_de_mim_theme') || 'light';
   html.setAttribute('data-theme', savedTheme);
   updateThemeIcon(savedTheme);
-  
+  updateThemeSelector(savedTheme);
+
+  // Toggle theme button (cycles through themes)
   themeToggle?.addEventListener('click', () => {
+    const themes = ['light', 'soft-dark', 'dark', 'ocean', 'rose', 'forest', 'sunset'];
     const currentTheme = html.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    
+    const currentIndex = themes.indexOf(currentTheme);
+    const newTheme = themes[(currentIndex + 1) % themes.length];
+
     html.setAttribute('data-theme', newTheme);
     localStorage.setItem('dona_de_mim_theme', newTheme);
     updateThemeIcon(newTheme);
+    updateThemeSelector(newTheme);
+  });
+
+  // Settings gear button
+  themeSettings?.addEventListener('click', () => {
+    themeSelector?.classList.toggle('active');
+  });
+
+  // Theme options
+  document.querySelectorAll('.theme-option').forEach(option => {
+    option.addEventListener('click', () => {
+      const newTheme = option.dataset.theme;
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('dona_de_mim_theme', newTheme);
+      updateThemeIcon(newTheme);
+      updateThemeSelector(newTheme);
+      themeSelector?.classList.remove('active');
+    });
+  });
+
+  // Close selector when clicking outside
+  document.addEventListener('click', (e) => {
+    if (themeSelector && !themeSelector.contains(e.target) && !themeSettings?.contains(e.target)) {
+      themeSelector.classList.remove('active');
+    }
   });
 }
 
 function updateThemeIcon(theme) {
   const icon = document.querySelector('#themeToggle i');
   if (!icon) return;
-  
-  if (theme === 'dark') {
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
-  } else {
+
+  if (theme === 'light' || theme === 'ocean' || theme === 'rose' || theme === 'forest' || theme === 'sunset') {
     icon.classList.remove('fa-sun');
     icon.classList.add('fa-moon');
+  } else {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
   }
+}
+
+function updateThemeSelector(theme) {
+  document.querySelectorAll('.theme-option').forEach(option => {
+    option.classList.toggle('active', option.dataset.theme === theme);
+  });
 }
 
 // ============================================
@@ -377,11 +414,73 @@ function initQuickView() {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      
+
       const slug = btn.dataset.productSlug;
       window.location.href = `/produto/${slug}`;
     });
   });
+}
+
+// ============================================
+// Category Page Filters
+// ============================================
+
+function initCategoryFilters() {
+  const sortSelect = document.getElementById('sortProducts');
+  const sizeFilters = document.querySelectorAll('.size-filter');
+  const productsGrid = document.getElementById('productsGrid');
+
+  if (!productsGrid) return;
+
+  // Size filter
+  sizeFilters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      sizeFilters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const selectedSize = btn.dataset.size;
+      filterProducts(selectedSize, sortSelect?.value || 'relevance');
+    });
+  });
+
+  // Sort filter
+  sortSelect?.addEventListener('change', () => {
+    const selectedSize = document.querySelector('.size-filter.active')?.dataset.size || 'all';
+    filterProducts(selectedSize, sortSelect.value);
+  });
+}
+
+function filterProducts(size, sort) {
+  const cards = document.querySelectorAll('.products-grid .product-card');
+  
+  cards.forEach(card => {
+    const sizes = card.querySelector('.product-sizes-mini');
+    const priceEl = card.querySelector('.price-current');
+    let show = true;
+
+    // Filter by size
+    if (size !== 'all' && sizes) {
+      const sizeText = sizes.textContent;
+      if (!sizeText.includes(size.toString())) {
+        show = false;
+      }
+    }
+
+    card.style.display = show ? 'block' : 'none';
+  });
+
+  // Sort (simple implementation - would need real sorting logic)
+  if (sort === 'price-asc' || sort === 'price-desc') {
+    const products = Array.from(cards);
+    products.sort((a, b) => {
+      const priceA = parseFloat(a.querySelector('.price-current')?.textContent.replace('R$ ', '') || 0);
+      const priceB = parseFloat(b.querySelector('.price-current')?.textContent.replace('R$ ', '') || 0);
+      return sort === 'price-asc' ? priceA - priceB : priceB - priceA;
+    });
+
+    const grid = document.querySelector('.products-grid');
+    products.forEach(p => grid.appendChild(p));
+  }
 }
 
 // ============================================
@@ -395,9 +494,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductPage();
   initCartPage();
   initQuickView();
-  
+  initCategoryFilters();
+
   // Update cart count on load
   updateCartCount();
-  
+
   console.log('💜 Dona de Mim - Cliente inicializado');
 });

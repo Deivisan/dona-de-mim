@@ -6,7 +6,7 @@ import { type Product, products } from '../data/products'
 import { getProductImagePath } from '../utils/helpers'
 
 function getImagePath(product: Product): string {
-  return getProductImagePath(product.sku, product.categoria)
+  return getProductImagePath(product.sku, product.categoria, product.imagem_principal.arquivo_novo)
 }
 
 function renderProductCard(product: Product): string {
@@ -35,14 +35,26 @@ function renderHeader(cartCount: number): string {
       <a href="/" class="logo">DONA DE <span>MIM</span></a>
       <nav><ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/categoria/vestidos">Vestidos</a></li>
-        <li><a href="/categoria/blusas">Blusas</a></li>
         <li><a href="/categoria/shorts">Shorts</a></li>
         <li><a href="/categoria/conjuntos">Conjuntos</a></li>
+        <li><a href="/categoria/macacoes">Macacões</a></li>
+        <li><a href="/categoria/bodys">Bodys</a></li>
       </ul></nav>
       <div class="header-actions">
-        <button id="themeToggle" aria-label="Alternar Tema"><i class="fas fa-moon"></i></button>
+        <button id="themeSettings" class="settings-btn" aria-label="Configurações de Tema"><i class="fas fa-cog"></i></button>
         <a href="/carrinho" class="cart-btn"><i class="fas fa-shopping-bag"></i>${cartCount > 0 ? `<span class="cart-count">${cartCount}</span>` : ''}</a>
+      </div>
+    </div>
+    <div class="theme-selector" id="themeSelector">
+      <h4>Temas</h4>
+      <div class="theme-options">
+        <div class="theme-option" data-theme="light">Claro</div>
+        <div class="theme-option" data-theme="soft-dark">Soft Dark</div>
+        <div class="theme-option" data-theme="dark">Dark</div>
+        <div class="theme-option" data-theme="ocean">Ocean</div>
+        <div class="theme-option" data-theme="rose">Rose</div>
+        <div class="theme-option" data-theme="forest">Forest</div>
+        <div class="theme-option" data-theme="sunset">Sunset</div>
       </div>
     </div>
   </header>`

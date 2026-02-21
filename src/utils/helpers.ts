@@ -2,17 +2,14 @@
 // DONA DE MIM - Image Helper
 // ============================================
 
-export function getProductImagePath(sku: string, categoria: string): string {
-  // Mapeamento de categoria para sufixo de arquivo
-  const mapping: Record<string, string> = {
-    'blusas': 'blusa',
-    'vestidos': 'vestido',
-    'conjuntos': 'conjunto',
-    'shorts': 'short'
+export function getProductImagePath(sku: string, categoria: string, arquivoNome?: string): string {
+  // Se tiver o nome específico do arquivo, usa diretamente
+  if (arquivoNome) {
+    return `/imgs/produtos/${categoria}/${arquivoNome}`
   }
   
-  const type = mapping[categoria] || 'produto'
-  return `/assets/imgs/${categoria}/${sku}-${type}.jpeg`
+  // Fallback para geração dinâmica
+  return `/imgs/produtos/${categoria}/${sku}.jpeg`
 }
 
 export function formatPrice(price: number): string {
