@@ -5,11 +5,11 @@
 export function getProductImagePath(sku: string, categoria: string, arquivoNome?: string): string {
   // Se tiver o nome específico do arquivo, usa diretamente
   if (arquivoNome) {
-    return `/imgs/produtos/${categoria}/${arquivoNome}`
+    return `/imgs/${categoria}/${arquivoNome}`
   }
   
   // Fallback para geração dinâmica
-  return `/imgs/produtos/${categoria}/${sku}.jpeg`
+  return `/imgs/${categoria}/${sku}.jpeg`
 }
 
 export function formatPrice(price: number): string {
