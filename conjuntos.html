@@ -14,16 +14,45 @@
     <div class="header-top">Moda Plus Size • Do 46 ao 54 • ❤️ Mulheres Reais</div>
     <div class="header-main">
       <a href="/" class="logo">DONA DE <span>MIM</span></a>
-      <nav><ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/categoria/shorts">Shorts</a></li>
-        <li><a href="/categoria/conjuntos">Conjuntos</a></li>
-        <li><a href="/categoria/macacoes">Macacões</a></li>
-        <li><a href="/categoria/bodys">Bodys</a></li>
-      </ul></nav>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/categoria/shorts">Shorts</a></li>
+          <li><a href="/categoria/conjuntos">Conjuntos</a></li>
+          <li><a href="/categoria/macacoes">Macacões</a></li>
+          <li><a href="/categoria/bodys">Bodys</a></li>
+        </ul>
+      </nav>
       <div class="header-actions">
+        <button id="themeSettings" class="settings-btn" aria-label="Configurações de Tema"><i class="fas fa-cog"></i></button>
         <button id="themeToggle" aria-label="Alternar Tema"><i class="fas fa-moon"></i></button>
-        <a href="/carrinho" class="cart-btn"><i class="fas fa-shopping-bag"></i></a>
+        <button aria-label="Buscar" id="searchBtn"><i class="fas fa-search"></i></button>
+        <a href="/carrinho" class="cart-btn" aria-label="Carrinho">
+          <i class="fas fa-shopping-bag"></i>
+          
+        </a>
+      </div>
+    </div>
+    <div class="theme-selector" id="themeSelector">
+      <h4>Temas</h4>
+      <div class="theme-options">
+        <div class="theme-option" data-theme="light">Claro</div>
+        <div class="theme-option" data-theme="soft-dark">Soft Dark</div>
+        <div class="theme-option" data-theme="dark">Dark</div>
+        <div class="theme-option" data-theme="ocean">Ocean</div>
+        <div class="theme-option" data-theme="rose">Rose</div>
+        <div class="theme-option" data-theme="forest">Forest</div>
+        <div class="theme-option" data-theme="sunset">Sunset</div>
+      </div>
+    </div>
+    <div class="search-modal" id="searchModal">
+      <div class="search-content">
+        <form action="/api/busca" method="get">
+          <input type="search" name="q" placeholder="Buscar produtos..." id="searchInput">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
+        <div class="search-results" id="searchResults"></div>
       </div>
     </div>
   </header>
@@ -31,7 +60,7 @@
   <section class="category-hero">
     <h1>Conjuntos Plus Size</h1>
     <p>Peças exclusivas desenhadas para valorizar suas curvas e realçar sua beleza.</p>
-    <span class="product-count">26 modelos encontrados</span>
+    <span class="product-count">40 modelos encontrados</span>
   </section>
 
   <section class="filters-bar">
@@ -87,7 +116,7 @@
     </div>
   </a><a href="/produto/conjunto-plus-size-neon-corda-10" class="product-card">
     <div class="product-image">
-      <img src="/imgs/conjuntos/DDM-0010-conjunto-plus-size-neon-corda.jpeg" alt="Conjunto Plus Size Neon com Corda" loading="lazy">
+      <img src="/imgs/conjuntos/DDM-0010-conjunto-plus-size-neon-detalhe-corda.jpeg" alt="Conjunto Plus Size Neon com Corda" loading="lazy">
     </div>
     <div class="product-info">
       <span class="product-category">conjuntos</span>
@@ -96,7 +125,7 @@
     </div>
   </a><a href="/produto/conjunto-plus-size-neon-corda-flat-11" class="product-card">
     <div class="product-image">
-      <img src="/imgs/conjuntos/DDM-0011-conjunto-plus-size-neon-corda-flat.jpeg" alt="Conjunto Plus Size Neon com Corda (Flat)" loading="lazy">
+      <img src="/imgs/conjuntos/DDM-0011-conjunto-plus-size-neon-detalhe-corda-flat.jpeg" alt="Conjunto Plus Size Neon com Corda (Flat)" loading="lazy">
     </div>
     <div class="product-info">
       <span class="product-category">conjuntos</span>
@@ -114,7 +143,7 @@
     </div>
   </a><a href="/produto/conjunto-plus-size-fucsia-corda-15" class="product-card">
     <div class="product-image">
-      <img src="/imgs/conjuntos/DDM-0015-conjunto-plus-size-fucsia-corda.jpeg" alt="Conjunto Plus Size Fúcsia com Corda" loading="lazy">
+      <img src="/imgs/conjuntos/DDM-0015-conjunto-plus-size-fucsia-detalhe-corda.jpeg" alt="Conjunto Plus Size Fúcsia com Corda" loading="lazy">
     </div>
     <div class="product-info">
       <span class="product-category">conjuntos</span>
@@ -123,7 +152,7 @@
     </div>
   </a><a href="/produto/conjunto-plus-size-fucsia-top-17" class="product-card">
     <div class="product-image">
-      <img src="/imgs/conjuntos/DDM-0017-conjunto-plus-size-fucsia-top.jpeg" alt="Conjunto Plus Size Fúcsia (Top)" loading="lazy">
+      <img src="/imgs/conjuntos/DDM-0017-conjunto-plus-size-fucsia-detalhe-corda-top.jpeg" alt="Conjunto Plus Size Fúcsia (Top)" loading="lazy">
     </div>
     <div class="product-info">
       <span class="product-category">conjuntos</span>
@@ -141,7 +170,7 @@
     </div>
   </a><a href="/produto/conjunto-plus-size-fucsia-praia-19" class="product-card">
     <div class="product-image">
-      <img src="/imgs/conjuntos/DDM-0019-conjunto-plus-size-fucsia-praia.jpeg" alt="Conjunto Plus Size Fúcsia Praia" loading="lazy">
+      <img src="/imgs/conjuntos/DDM-0019-conjunto-plus-size-fucsia-detalhe-corda-praia.jpeg" alt="Conjunto Plus Size Fúcsia Praia" loading="lazy">
     </div>
     <div class="product-info">
       <span class="product-category">conjuntos</span>
@@ -177,7 +206,7 @@
     </div>
   </a><a href="/produto/conjunto-plus-size-rosa-verde-flat-24" class="product-card">
     <div class="product-image">
-      <img src="/imgs/conjuntos/DDM-0024-conjunto-plus-size-rosa-verde-flat.jpeg" alt="Conjunto Plus Size Rosa e Verde (Flat)" loading="lazy">
+      <img src="/imgs/conjuntos/DDM-0024-conjunto-plus-size-rosa-short-verde-flat.jpeg" alt="Conjunto Plus Size Rosa e Verde (Flat)" loading="lazy">
     </div>
     <div class="product-info">
       <span class="product-category">conjuntos</span>
@@ -292,6 +321,132 @@
       <h4>Conjunto Plus Size Fúcsia (Close)</h4>
       <div class="product-prices"><span class="price-current">R$ 189.90</span></div>
     </div>
+  </a><a href="/produto/conjunto-plus-size-novo-44" class="product-card">
+    <div class="product-image"><span class="product-tag tag-new">Lançamento</span>
+      <img src="/imgs/conjuntos/DDM-0044-conjunto-plus-size-novo.jpeg" alt="Conjunto Plus Size Novo" loading="lazy">
+    </div>
+    <div class="product-info">
+      <span class="product-category">conjuntos</span>
+      <h4>Conjunto Plus Size Novo</h4>
+      <div class="product-prices"><span class="price-current">R$ 189.90</span></div>
+    </div>
+  </a><a href="/produto/conjunto-plus-size-novo-v2-45" class="product-card">
+    <div class="product-image"><span class="product-tag tag-new">Lançamento</span>
+      <img src="/imgs/conjuntos/DDM-0045-conjunto-plus-size-novo-1.jpeg" alt="Conjunto Plus Size Novo V2" loading="lazy">
+    </div>
+    <div class="product-info">
+      <span class="product-category">conjuntos</span>
+      <h4>Conjunto Plus Size Novo V2</h4>
+      <div class="product-prices"><span class="price-current">R$ 199.90</span></div>
+    </div>
+  </a><a href="/produto/conjunto-plus-size-casual-46" class="product-card">
+    <div class="product-image"><span class="product-tag tag-new">Lançamento</span>
+      <img src="/imgs/conjuntos/DDM-0046-conjunto-plus-size-novo-1.jpeg" alt="Conjunto Plus Size Casual" loading="lazy">
+    </div>
+    <div class="product-info">
+      <span class="product-category">conjuntos</span>
+      <h4>Conjunto Plus Size Casual</h4>
+      <div class="product-prices"><span class="price-current">R$ 179.90</span></div>
+    </div>
+  </a><a href="/produto/conjunto-plus-size-elegante-47" class="product-card">
+    <div class="product-image"><span class="product-tag tag-new">Lançamento</span>
+      <img src="/imgs/conjuntos/DDM-0047-conjunto-plus-size-novo-1.jpeg" alt="Conjunto Plus Size Elegante" loading="lazy">
+    </div>
+    <div class="product-info">
+      <span class="product-category">conjuntos</span>
+      <h4>Conjunto Plus Size Elegante</h4>
+      <div class="product-prices"><span class="price-current">R$ 219.90</span></div>
+    </div>
+  </a><a href="/produto/conjunto-plus-size-moderno-48" class="product-card">
+    <div class="product-image"><span class="product-tag tag-new">Lançamento</span>
+      <img src="/imgs/conjuntos/DDM-0048-conjunto-plus-size-novo-1.jpeg" alt="Conjunto Plus Size Moderno" loading="lazy">
+    </div>
+    <div class="product-info">
+      <span class="product-category">conjuntos</span>
+      <h4>Conjunto Plus Size Moderno</h4>
+      <div class="product-prices"><span class="price-current">R$ 199.90</span></div>
+    </div>
+  </a><a href="/produto/conjunto-plus-size-trend-49" class="product-card">
+    <div class="product-image"><span class="product-tag tag-new">Lançamento</span>
+      <img src="/imgs/conjuntos/DDM-0049-conjunto-plus-size-novo-1.jpeg" alt="Conjunto Plus Size Trend" loading="lazy">
+    </div>
+    <div class="product-info">
+      <span class="product-category">conjuntos</span>
+      <h4>Conjunto Plus Size Trend</h4>
+      <div class="product-prices"><span class="price-current">R$ 189.90</span></div>
+    </div>
+  </a><a href="/produto/conjunto-plus-size-fresh-50" class="product-card">
+    <div class="product-image"><span class="product-tag tag-new">Lançamento</span>
+      <img src="/imgs/conjuntos/DDM-0050-conjunto-plus-size-novo-1.jpeg" alt="Conjunto Plus Size Fresh" loading="lazy">
+    </div>
+    <div class="product-info">
+      <span class="product-category">conjuntos</span>
+      <h4>Conjunto Plus Size Fresh</h4>
+      <div class="product-prices"><span class="price-current">R$ 179.90</span></div>
+    </div>
+  </a><a href="/produto/conjunto-plus-size-estilo-unico-51" class="product-card">
+    <div class="product-image"><span class="product-tag tag-new">Lançamento</span>
+      <img src="/imgs/conjuntos/DDM-0051-conjunto-plus-size-novo-1.jpeg" alt="Conjunto Plus Size Estilo Único" loading="lazy">
+    </div>
+    <div class="product-info">
+      <span class="product-category">conjuntos</span>
+      <h4>Conjunto Plus Size Estilo Único</h4>
+      <div class="product-prices"><span class="price-current">R$ 199.90</span></div>
+    </div>
+  </a><a href="/produto/conjunto-plus-size-colecao-completa-52" class="product-card">
+    <div class="product-image"><span class="product-tag tag-new">Lançamento</span>
+      <img src="/imgs/conjuntos/DDM-0052-conjunto-plus-size-novo-1.jpeg" alt="Conjunto Plus Size Coleção Completa" loading="lazy">
+    </div>
+    <div class="product-info">
+      <span class="product-category">conjuntos</span>
+      <h4>Conjunto Plus Size Coleção Completa</h4>
+      <div class="product-prices"><span class="price-current">R$ 219.90</span></div>
+    </div>
+  </a><a href="/produto/conjunto-plus-size-versatil-53" class="product-card">
+    <div class="product-image"><span class="product-tag tag-new">Lançamento</span>
+      <img src="/imgs/conjuntos/DDM-0053-conjunto-plus-size-novo-1.jpeg" alt="Conjunto Plus Size Versátil" loading="lazy">
+    </div>
+    <div class="product-info">
+      <span class="product-category">conjuntos</span>
+      <h4>Conjunto Plus Size Versátil</h4>
+      <div class="product-prices"><span class="price-current">R$ 189.90</span></div>
+    </div>
+  </a><a href="/produto/conjunto-plus-size-elegance-54" class="product-card">
+    <div class="product-image"><span class="product-tag tag-new">Lançamento</span>
+      <img src="/imgs/conjuntos/DDM-0054-conjunto-plus-size-novo-1.jpeg" alt="Conjunto Plus Size Elegance" loading="lazy">
+    </div>
+    <div class="product-info">
+      <span class="product-category">conjuntos</span>
+      <h4>Conjunto Plus Size Elegance</h4>
+      <div class="product-prices"><span class="price-current">R$ 229.90</span></div>
+    </div>
+  </a><a href="/produto/conjunto-plus-size-fresh-style-55" class="product-card">
+    <div class="product-image"><span class="product-tag tag-new">Lançamento</span>
+      <img src="/imgs/conjuntos/DDM-0055-conjunto-plus-size-novo-1.jpeg" alt="Conjunto Plus Size Fresh Style" loading="lazy">
+    </div>
+    <div class="product-info">
+      <span class="product-category">conjuntos</span>
+      <h4>Conjunto Plus Size Fresh Style</h4>
+      <div class="product-prices"><span class="price-current">R$ 199.90</span></div>
+    </div>
+  </a><a href="/produto/conjunto-plus-size-urban-chic-56" class="product-card">
+    <div class="product-image"><span class="product-tag tag-new">Lançamento</span>
+      <img src="/imgs/conjuntos/DDM-0056-conjunto-plus-size-novo-1.jpeg" alt="Conjunto Plus Size Urban Chic" loading="lazy">
+    </div>
+    <div class="product-info">
+      <span class="product-category">conjuntos</span>
+      <h4>Conjunto Plus Size Urban Chic</h4>
+      <div class="product-prices"><span class="price-current">R$ 189.90</span></div>
+    </div>
+  </a><a href="/produto/conjunto-plus-size-summer-vibes-57" class="product-card">
+    <div class="product-image"><span class="product-tag tag-new">Lançamento</span>
+      <img src="/imgs/conjuntos/DDM-0057-conjunto-plus-size-novo-1.jpeg" alt="Conjunto Plus Size Summer Vibes" loading="lazy">
+    </div>
+    <div class="product-info">
+      <span class="product-category">conjuntos</span>
+      <h4>Conjunto Plus Size Summer Vibes</h4>
+      <div class="product-prices"><span class="price-current">R$ 179.90</span></div>
+    </div>
   </a>
     </div>
   </section>
@@ -300,14 +455,43 @@
     <div class="footer-content">
       <div class="footer-brand">
         <a href="/" class="logo">DONA DE <span>MIM</span></a>
-        <p>Moda plus size feita para mulheres reais.<br><strong>A DONA</strong> - 75 9156-1769</p>
+        <p>Moda plus size feita para mulheres reais. Realçando as curvas de quem é Dona de si.<br><br><strong>A DONA</strong> - 75 9156-1769</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/use_donademiim/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/557591561769" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
       </div>
-      <div class="footer-column"><h5>Institucional</h5><ul><li><a href="#">Sobre Nós</a></li></ul></div>
-      <div class="footer-column"><h5>Contato</h5><ul><li><a href="https://wa.me/557591561769">75 9156-1769</a></li></ul></div>
+      <div class="footer-column">
+        <h5>Institucional</h5>
+        <ul>
+          <li><a href="/sobre-nos">Sobre Nós</a></li>
+          <li><a href="/guia-de-tamanhos">Guia de Tamanhos</a></li>
+          <li><a href="/politicas">Políticas</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h5>Ajuda</h5>
+        <ul>
+          <li><a href="/politicas#frete">Frete e Entrega</a></li>
+          <li><a href="/politicas#trocas">Trocas e Devoluções</a></li>
+          <li><a href="/guia-de-tamanhos">Como Medir</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="https://wa.me/557591561769"><i class="fab fa-whatsapp"></i> 75 9156-1769</a></li>
+          <li><a href="https://www.instagram.com/use_donademiim/" target="_blank"><i class="fab fa-instagram"></i> @use_donademiim</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2026 DONA DE MIM. Todos os direitos reservados.</p></div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 DONA DE MIM. Todos os direitos reservados. Feito com ❤️ para mulheres reais.</p>
+    </div>
   </footer>
-  <a href="https://wa.me/557591561769" target="_blank" class="floating-whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://wa.me/557591561769" target="_blank" class="floating-whatsapp" aria-label="Fale conosco no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
   <script src="/assets/js/app.js"></script>
 </body>
 </html>
