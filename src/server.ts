@@ -119,7 +119,11 @@ function getCartTotal(sessionId: string) {
   for (const item of items) {
     const product = products.find((p) => p.id === item.product_id)
     if (product) {
-      total += product.preco_venda * item.quantity
+      // Usar preço promocional se aplicável
+      const price = product.em_promocao && product.preco_promocional 
+        ? product.preco_promocional 
+        : product.preco_venda
+      total += price * item.quantity
     }
   }
   return total
@@ -131,6 +135,9 @@ function getCartCount(sessionId: string) {
     .get(sessionId) as any
   return result?.count || 0
 }
+
+// Categorias válidas
+const VALID_CATEGORIES = ['shorts', 'conjuntos', 'macacoes', 'bodys', 'vestidos', 'blusas']
 
 // Gerar número do pedido
 function generateOrderNumber() {
@@ -260,6 +267,14 @@ const app = new Elysia()
 
   // Categoria (DEPOIS das rotas específicas)
   .get('/categoria/:categoria', ({ params, sessionId }) => {
+    // Validar categoria
+    if (!VALID_CATEGORIES.includes(params.categoria)) {
+      return new Response('<!DOCTYPE html><html lang="pt-BR"><head><title>Categoria não encontrada | Dona De Mim</title></head><body style="font-family: Poppins, sans-serif; text-align: center; padding: 50px;"><h1>Categoria não encontrada</h1><p>A categoria que você procura não existe.</p><a href="/" style="color: #c9a87c; text-decoration: none;">← Voltar à página inicial</a></body></html>', { 
+        status: 404,
+        headers: { 'Content-Type': 'text/html; charset=utf-8' }
+      })
+    }
+    
     const cartCount = getCartCount(sessionId)
 
     const html = CategoryPage(params.categoria, cartCount)
@@ -419,7 +434,8 @@ const app = new Elysia()
           INSERT INTO order_items (order_id, product_id, tamanho, quantity, price)
           VALUES (?, ?, ?, ?, ?)
         `,
-          [orderId.id, item.product_id, item.tamanho, item.quantity, product.preco_venda],
+          [orderId.id, item.product_id, item.tamanho, item.quantity, 
+            product.em_promocao && product.preco_promocional ? product.preco_promocional : product.preco_venda],
         )
       }
     }
@@ -436,9 +452,12 @@ const app = new Elysia()
     for (const item of cartItems as any[]) {
       const product = products.find((p) => p.id === item.product_id)
       if (product) {
+        const itemPrice = product.em_promocao && product.preco_promocional 
+          ? product.preco_promocional 
+          : product.preco_venda
         message += `\n• ${product.nome}\n`
         message += `  Tamanho: ${item.tamanho} | Qtd: ${item.quantity}\n`
-        message += `  R$ ${(product.preco_venda * item.quantity).toFixed(2)}\n`
+        message += `  R$ ${(itemPrice * item.quantity).toFixed(2)}\n`
       }
     }
 

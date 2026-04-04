@@ -4,69 +4,17 @@
 
 import { type Product, products } from '../data/products'
 import { getProductImagePath } from '../utils/helpers'
+import { renderHeader, renderFooter, renderFloatingWhatsApp } from './components'
 
 function getImagePath(product: Product): string {
   return getProductImagePath(product.sku, product.categoria, product.imagem_principal.arquivo_novo)
-}
-
-function renderHeader(cartCount: number): string {
-  return `<header>
-    <div class="header-top">Moda Plus Size • Do 46 ao 54 • ❤️ Mulheres Reais</div>
-    <div class="header-main">
-      <a href="/" class="logo">DONA DE <span>MIM</span></a>
-      <nav><ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/categoria/shorts">Shorts</a></li>
-        <li><a href="/categoria/conjuntos">Conjuntos</a></li>
-        <li><a href="/categoria/macacoes">Macacões</a></li>
-        <li><a href="/categoria/bodys">Bodys</a></li>
-      </ul></nav>
-      <div class="header-actions">
-        <button id="themeSettings" class="settings-btn" aria-label="Configurações de Tema"><i class="fas fa-cog"></i></button>
-        <button id="themeToggle" aria-label="Alternar Tema"><i class="fas fa-moon"></i></button>
-        <button aria-label="Buscar" id="searchBtn"><i class="fas fa-search"></i></button>
-        <a href="/carrinho" class="cart-btn"><i class="fas fa-shopping-bag"></i>${cartCount > 0 ? `<span class="cart-count">${cartCount}</span>` : ''}</a>
-      </div>
-    </div>
-    <div class="theme-selector" id="themeSelector">
-      <h4>Temas</h4>
-      <div class="theme-options">
-        <div class="theme-option" data-theme="light">Claro</div>
-        <div class="theme-option" data-theme="soft-dark">Soft Dark</div>
-        <div class="theme-option" data-theme="dark">Dark</div>
-        <div class="theme-option" data-theme="ocean">Ocean</div>
-        <div class="theme-option" data-theme="rose">Rose</div>
-        <div class="theme-option" data-theme="forest">Forest</div>
-        <div class="theme-option" data-theme="sunset">Sunset</div>
-      </div>
-    </div>
-  </header>`
-}
-
-function renderFooter(): string {
-  return `<footer>
-    <div class="footer-content">
-      <div class="footer-brand">
-        <a href="/" class="logo">DONA DE <span>MIM</span></a>
-        <p>Moda plus size feita para mulheres reais.<br><br><strong>A DONA</strong> - 75 9156-1769</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/use_donademiim/" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/557591561769" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
-      </div>
-      <div class="footer-column"><h5>Institucional</h5><ul><li><a href="#">Sobre Nós</a></li></ul></div>
-      <div class="footer-column"><h5>Ajuda</h5><ul><li><a href="#">Central de Ajuda</a></li></ul></div>
-      <div class="footer-column"><h5>Contato</h5><ul><li><a href="https://wa.me/557591561769">75 9156-1769</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><p>&copy; 2026 DONA DE MIM.</p></div>
-  </footer>`
 }
 
 export function ProductPage(slug: string, cartCount: number = 0): string {
   const product = products.find((p: Product) => p.slug === slug)
 
   if (!product) {
-    return `<!DOCTYPE html><html><head><title>Produto não encontrado</title></head><body><h1>Produto não encontrado</h1><a href="/">Voltar</a></body></html>`
+    return `<!DOCTYPE html><html lang="pt-BR"><head><title>Produto não encontrado | Dona De Mim</title></head><body style="font-family: Poppins, sans-serif; text-align: center; padding: 50px;"><h1>Produto não encontrado</h1><p>O produto que você procura não existe ou foi removido.</p><a href="/" style="color: #c9a87c; text-decoration: none;">← Voltar à página inicial</a></body></html>`
   }
 
   const img = getImagePath(product)
@@ -208,12 +156,9 @@ export function ProductPage(slug: string, cartCount: number = 0): string {
   }
 
   ${renderFooter()}
-
-  <a href="https://wa.me/557591561769" target="_blank" class="floating-whatsapp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
+  ${renderFloatingWhatsApp()}
   <script src="/assets/js/app.js"></script>
 </body>
 </html>`
 }
+

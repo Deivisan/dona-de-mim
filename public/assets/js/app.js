@@ -267,8 +267,8 @@ function displaySearchResults(products) {
   }
   
   resultsContainer.innerHTML = products.slice(0, 6).map(product => {
-    const type = product.categoria === 'blusas' ? 'blusa' : 'vestido';
-    const img = `/assets/imgs/${product.categoria}/${product.sku}-${type}.jpeg`;
+    // Gerar path dinâmico baseado na categoria real do produto
+    const img = `/assets/imgs/${product.categoria}/${product.imagem_principal.arquivo_novo}`;
     
     return `
       <a href="/produto/${product.slug}" class="search-result-item">

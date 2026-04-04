@@ -29,6 +29,10 @@ export interface Product {
     cor_hex: string
     paleta: Array<{ rgb: number[]; hex: string; nome: string; percentual: number }>
   }
+  imagens_adicionais?: {
+    arquivo_novo: string
+    descricao?: string
+  }[]
   tamanhos_disponiveis: number[]
   material: string
   cuidados: string
@@ -518,7 +522,7 @@ export const products: Product[] = [
     ativo: true,
     imagem_principal: {
       arquivo_original: 'WhatsApp Image 2026-02-19 at 13.18.47 (1).jpeg',
-      arquivo_novo: 'DDM-0010-conjunto-plus-size-neon-corda.jpeg',
+      arquivo_novo: 'DDM-0010-conjunto-plus-size-neon-detalhe-corda.jpeg',
       dimensoes: { largura: 1200, altura: 1600 },
       tamanho_bytes: 339190,
       hash_md5: '14ec14b83a049a9b6c671f8d2a9881b6',
@@ -553,7 +557,7 @@ export const products: Product[] = [
     ativo: true,
     imagem_principal: {
       arquivo_original: 'WhatsApp Image 2026-02-19 at 13.18.47 (2).jpeg',
-      arquivo_novo: 'DDM-0011-conjunto-plus-size-neon-corda-flat.jpeg',
+      arquivo_novo: 'DDM-0011-conjunto-plus-size-neon-detalhe-corda-flat.jpeg',
       dimensoes: { largura: 1200, altura: 1600 },
       tamanho_bytes: 339190,
       hash_md5: '14ec14b83a049a9b6c671f8d2a9881b6',
@@ -623,7 +627,7 @@ export const products: Product[] = [
     ativo: true,
     imagem_principal: {
       arquivo_original: 'WhatsApp Image 2026-02-19 at 13.18.48 (2).jpeg',
-      arquivo_novo: 'DDM-0015-conjunto-plus-size-fucsia-corda.jpeg',
+      arquivo_novo: 'DDM-0015-conjunto-plus-size-fucsia-detalhe-corda.jpeg',
       dimensoes: { largura: 900, altura: 1200 },
       tamanho_bytes: 120000,
       hash_md5: 'abc123fucsia',
@@ -658,7 +662,7 @@ export const products: Product[] = [
     ativo: true,
     imagem_principal: {
       arquivo_original: 'WhatsApp Image 2026-02-19 at 13.18.49 (1).jpeg',
-      arquivo_novo: 'DDM-0017-conjunto-plus-size-fucsia-top.jpeg',
+      arquivo_novo: 'DDM-0017-conjunto-plus-size-fucsia-detalhe-corda-top.jpeg',
       dimensoes: { largura: 800, altura: 600 },
       tamanho_bytes: 83196,
       hash_md5: 'top17fucsia',
@@ -727,7 +731,7 @@ export const products: Product[] = [
     ativo: true,
     imagem_principal: {
       arquivo_original: 'WhatsApp Image 2026-02-19 at 13.18.49.jpeg',
-      arquivo_novo: 'DDM-0019-conjunto-plus-size-fucsia-praia.jpeg',
+      arquivo_novo: 'DDM-0019-conjunto-plus-size-fucsia-detalhe-corda-praia.jpeg',
       dimensoes: { largura: 900, altura: 1200 },
       tamanho_bytes: 126061,
       hash_md5: 'fucsia19',
@@ -866,7 +870,7 @@ export const products: Product[] = [
     ativo: true,
     imagem_principal: {
       arquivo_original: 'WhatsApp Image 2026-02-19 at 13.18.52.jpeg',
-      arquivo_novo: 'DDM-0024-conjunto-plus-size-rosa-verde-flat.jpeg',
+      arquivo_novo: 'DDM-0024-conjunto-plus-size-rosa-short-verde-flat.jpeg',
       dimensoes: { largura: 1000, altura: 800 },
       tamanho_bytes: 351385,
       hash_md5: 'rosa24',
@@ -1329,6 +1333,13 @@ export const products: Product[] = [
         { rgb: [192, 192, 192], hex: '#c0c0c0', nome: 'cinza', percentual: 15.0 },
       ],
     },
+    imagens_adicionais: [
+      { arquivo_novo: 'DDM-0014-macaquinho-plus-size-fucsia-bananas.jpeg', descricao: 'Modelo com caixa de bananas - pose divertida' },
+      { arquivo_novo: 'DDM-0016-macaquinho-plus-size-fucsia-flat.jpeg', descricao: 'Foto plana (flat lay)' },
+      { arquivo_novo: 'DDM-0025-macaquinho-plus-size-fucsia-flat-v2.jpeg', descricao: 'Foto plana alternativa' },
+      { arquivo_novo: 'DDM-0031-macaquinho-plus-size-fucsia-modelo.jpeg', descricao: 'Modelo em cenário de frutas' },
+      { arquivo_novo: 'DDM-0036-macaquinho-plus-size-fucsia-bananas-v2.jpeg', descricao: 'Modelo com bananas - outro ângulo' },
+    ],
     tamanhos_disponiveis: [46, 48, 50, 52, 54],
     material: 'Poliéster',
     cuidados: 'Lavar à mão com sabão neutro.',
@@ -1349,7 +1360,7 @@ export const products: Product[] = [
     em_promocao: false,
     destaque: true,
     lancamento: false,
-    ativo: true,
+    ativo: false,
     imagem_principal: {
       arquivo_original: 'WhatsApp Image 2026-02-19 at 13.18.48 (1).jpeg',
       arquivo_novo: 'DDM-0014-macaquinho-plus-size-fucsia-bananas.jpeg',
@@ -1384,7 +1395,7 @@ export const products: Product[] = [
     em_promocao: false,
     destaque: false,
     lancamento: false,
-    ativo: true,
+    ativo: false,
     imagem_principal: {
       arquivo_original: 'WhatsApp Image 2026-02-19 at 13.18.48.jpeg',
       arquivo_novo: 'DDM-0016-macaquinho-plus-size-fucsia-flat.jpeg',
@@ -1418,7 +1429,7 @@ export const products: Product[] = [
     em_promocao: false,
     destaque: false,
     lancamento: false,
-    ativo: true,
+    ativo: false,
     imagem_principal: {
       arquivo_original: 'WhatsApp Image 2026-02-19 at 13.18.53 (1).jpeg',
       arquivo_novo: 'DDM-0025-macaquinho-plus-size-fucsia-flat-v2.jpeg',
@@ -1452,7 +1463,7 @@ export const products: Product[] = [
     em_promocao: false,
     destaque: false,
     lancamento: false,
-    ativo: true,
+    ativo: false,
     imagem_principal: {
       arquivo_original: 'WhatsApp Image 2026-02-19 at 13.18.56 (2).jpeg',
       arquivo_novo: 'DDM-0031-macaquinho-plus-size-fucsia-modelo.jpeg',
@@ -1486,7 +1497,7 @@ export const products: Product[] = [
     em_promocao: false,
     destaque: false,
     lancamento: false,
-    ativo: true,
+    ativo: false,
     imagem_principal: {
       arquivo_original: 'WhatsApp Image 2026-02-19 at 13.18.58.jpeg',
       arquivo_novo: 'DDM-0036-macaquinho-plus-size-fucsia-bananas-v2.jpeg',
@@ -1588,7 +1599,7 @@ export const categories = [
     slug: 'macacoes',
     nome: 'Macacões',
     descricao: 'Macacões e macaquinhos estilosos e modernos para mulheres reais. Tamanhos 46 ao 54.',
-    total_produtos: 6,
+    total_produtos: 1,
     ativa: true,
     ordem: 5,
   },

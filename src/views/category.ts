@@ -4,6 +4,7 @@
 
 import { type Product, products } from '../data/products'
 import { getProductImagePath } from '../utils/helpers'
+import { renderHeader, renderFooter, renderFloatingWhatsApp } from './components'
 
 function getImagePath(product: Product): string {
   return getProductImagePath(product.sku, product.categoria, product.imagem_principal.arquivo_novo)
@@ -26,52 +27,6 @@ function renderProductCard(product: Product): string {
       <div class="product-prices">${price}</div>
     </div>
   </a>`
-}
-
-function renderHeader(cartCount: number): string {
-  return `<header>
-    <div class="header-top">Moda Plus Size • Do 46 ao 54 • ❤️ Mulheres Reais</div>
-    <div class="header-main">
-      <a href="/" class="logo">DONA DE <span>MIM</span></a>
-      <nav><ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/categoria/shorts">Shorts</a></li>
-        <li><a href="/categoria/conjuntos">Conjuntos</a></li>
-        <li><a href="/categoria/macacoes">Macacões</a></li>
-        <li><a href="/categoria/bodys">Bodys</a></li>
-      </ul></nav>
-      <div class="header-actions">
-        <button id="themeSettings" class="settings-btn" aria-label="Configurações de Tema"><i class="fas fa-cog"></i></button>
-        <a href="/carrinho" class="cart-btn"><i class="fas fa-shopping-bag"></i>${cartCount > 0 ? `<span class="cart-count">${cartCount}</span>` : ''}</a>
-      </div>
-    </div>
-    <div class="theme-selector" id="themeSelector">
-      <h4>Temas</h4>
-      <div class="theme-options">
-        <div class="theme-option" data-theme="light">Claro</div>
-        <div class="theme-option" data-theme="soft-dark">Soft Dark</div>
-        <div class="theme-option" data-theme="dark">Dark</div>
-        <div class="theme-option" data-theme="ocean">Ocean</div>
-        <div class="theme-option" data-theme="rose">Rose</div>
-        <div class="theme-option" data-theme="forest">Forest</div>
-        <div class="theme-option" data-theme="sunset">Sunset</div>
-      </div>
-    </div>
-  </header>`
-}
-
-function renderFooter(): string {
-  return `<footer>
-    <div class="footer-content">
-      <div class="footer-brand">
-        <a href="/" class="logo">DONA DE <span>MIM</span></a>
-        <p>Moda plus size feita para mulheres reais.<br><strong>A DONA</strong> - 75 9156-1769</p>
-      </div>
-      <div class="footer-column"><h5>Institucional</h5><ul><li><a href="#">Sobre Nós</a></li></ul></div>
-      <div class="footer-column"><h5>Contato</h5><ul><li><a href="https://wa.me/557591561769">75 9156-1769</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><p>&copy; 2026 DONA DE MIM. Todos os direitos reservados.</p></div>
-  </footer>`
 }
 
 export function CategoryPage(categoria: string, cartCount: number = 0): string {
@@ -131,7 +86,7 @@ export function CategoryPage(categoria: string, cartCount: number = 0): string {
   </section>
 
   ${renderFooter()}
-  <a href="https://wa.me/557591561769" target="_blank" class="floating-whatsapp"><i class="fab fa-whatsapp"></i></a>
+  ${renderFloatingWhatsApp()}
   <script src="/assets/js/app.js"></script>
 </body>
 </html>`
@@ -144,23 +99,35 @@ export function CartPage(items: Array<{ id: number; quantity: number; product: P
     .map((item: { id: number; quantity: number; product: Product; tamanho: number }) => {
       const product = item.product
       const img = getImagePath(product)
+      // Usar preço promocional se aplicável
+      const itemPrice = product.em_promocao && product.preco_promocional 
+        ? product.preco_promocional 
+        : product.preco_venda
       return `<div class="cart-item" data-item-id="${item.id}">
       <div class="cart-item-image"><img src="${img}" alt="${product.nome}"></div>
       <div class="cart-item-info">
         <h3>${product.nome}</h3>
         <p>Tamanho: <strong>${item.tamanho}</strong></p>
-        <p class="item-price">R$ ${product.preco_venda.toFixed(2)}</p>
+        <p class="item-price">R$ ${itemPrice.toFixed(2)}${product.em_promocao && product.preco_promocional ? ' <span class="badge-promo">PROMO</span>' : ''}</p>
       </div>
       <div class="cart-item-qty">
         <button class="qty-btn" data-action="decrease">-</button>
         <span>${item.quantity}</span>
         <button class="qty-btn" data-action="increase">+</button>
       </div>
-      <div class="cart-item-total">R$ ${(product.preco_venda * item.quantity).toFixed(2)}</div>
+      <div class="cart-item-total">R$ ${(itemPrice * item.quantity).toFixed(2)}</div>
       <button class="cart-item-remove" data-item-id="${item.id}"><i class="fas fa-trash"></i></button>
     </div>`
     })
     .join('')
+
+  // Calcular total considerando promoções
+  const totalComPromocao = items.reduce((sum, item) => {
+    const price = item.product.em_promocao && item.product.preco_promocional 
+      ? item.product.preco_promocional 
+      : item.product.preco_venda
+    return sum + (price * item.quantity)
+  }, 0)
 
   return `<!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
@@ -200,9 +167,9 @@ export function CartPage(items: Array<{ id: number; quantity: number; product: P
       
       <div class="cart-summary">
         <h2>Resumo do Pedido</h2>
-        <div class="summary-row"><span>Subtotal</span><span>R$ ${total.toFixed(2)}</span></div>
-        <div class="summary-row"><span>Frete</span><span>${total >= 299 ? '<strong style="color: #25D366">GRÁTIS</strong>' : 'A calcular'}</span></div>
-        <div class="summary-row total"><span>Total</span><span>R$ ${total.toFixed(2)}</span></div>
+        <div class="summary-row"><span>Subtotal</span><span>R$ ${totalComPromocao.toFixed(2)}</span></div>
+        <div class="summary-row"><span>Frete</span><span>${totalComPromocao >= 299 ? '<strong style="color: #25D366">GRÁTIS</strong>' : 'A calcular'}</span></div>
+        <div class="summary-row total"><span>Total</span><span>R$ ${totalComPromocao.toFixed(2)}</span></div>
         
         <form id="checkoutForm" class="checkout-form">
           <h3>Seus Dados para Contato</h3>
@@ -233,7 +200,7 @@ export function CartPage(items: Array<{ id: number; quantity: number; product: P
   </main>
 
   ${renderFooter()}
-  <a href="https://wa.me/557591561769" target="_blank" class="floating-whatsapp"><i class="fab fa-whatsapp"></i></a>
+  ${renderFloatingWhatsApp()}
   <script src="/assets/js/app.js"></script>
 </body>
 </html>`
